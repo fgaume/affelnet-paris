@@ -1,914 +1,1245 @@
 [
-    {
-      "code": "0755433Y",
-      "nom": "AIME CESAIRE",
-      "annee": 2024,
-      "dnb_admis": 63,
-      "ips": 85.5,
-      "bonus": 1200
-    },
-    {
-      "code": "0750607C",
-      "nom": "ALAIN FOURNIER",
-      "annee": 2024,
-      "dnb_admis": 129,
-      "ips": 118,
-      "bonus": 600
-    },
-    {
-      "code": "0750445B",
-      "nom": "ALBERTO GIACOMETTI",
-      "annee": 2024,
-      "dnb_admis": 102,
-      "ips": 100.1,
-      "bonus": 1200
-    },
-    {
-      "code": "0751705W",
-      "nom": "ALPHONSE DAUDET",
-      "annee": 2024,
-      "dnb_admis": 113,
-      "ips": 104.6,
-      "bonus": 1200
-    },
-    {
-      "code": "0754305X",
-      "nom": "ANDRE CITROEN",
-      "annee": 2024,
-      "dnb_admis": 134,
-      "ips": 106.8,
-      "bonus": 600
-    },
-    {
-      "code": "0752387M",
-      "nom": "ANDRE MALRAUX",
-      "annee": 2024,
-      "dnb_admis": 93,
-      "ips": 132.6,
-      "bonus": 0
-    },
-    {
-      "code": "0750608D",
-      "nom": "ANNE FRANK",
-      "annee": 2024,
-      "dnb_admis": 88,
-      "ips": 125.1,
-      "bonus": 600
-    },
-    {
-      "code": "0752319N",
-      "nom": "ANTOINE COYSEVOX",
-      "annee": 2024,
-      "dnb_admis": 161,
-      "ips": 112.9,
-      "bonus": 1200
-    },
-    {
-      "code": "0750362L",
-      "nom": "BEAUMARCHAIS",
-      "annee": 2024,
-      "dnb_admis": 89,
-      "ips": 127.8,
-      "bonus": 600
-    },
-    {
-      "code": "0752829T",
-      "nom": "BERNARD PALISSY",
-      "annee": 2024,
-      "dnb_admis": 63,
-      "ips": 126.6,
-      "bonus": 600
-    },
-    {
-      "code": "0752958H",
-      "nom": "BORIS VIAN",
-      "annee": 2024,
-      "dnb_admis": 89,
-      "ips": 93.8,
-      "bonus": 1200
-    },
-    {
-      "code": "0752545J",
-      "nom": "BUFFON",
-      "annee": 2024,
-      "dnb_admis": 135,
-      "ips": 132.8,
-      "bonus": 0
-    },
-    {
-      "code": "0752694W",
-      "nom": "CAMILLE CLAUDEL",
-      "annee": 2024,
-      "dnb_admis": 72,
-      "ips": 91.3,
-      "bonus": 1200
-    },
-    {
-      "code": "0752546K",
-      "nom": "CAMILLE SEE",
-      "annee": 2024,
-      "dnb_admis": 144,
-      "ips": 132.1,
-      "bonus": 0
-    },
-    {
-      "code": "0752552S",
-      "nom": "CARNOT",
-      "annee": 2024,
-      "dnb_admis": 143,
-      "ips": 140.4,
-      "bonus": 0
-    },
-    {
-      "code": "0752248L",
-      "nom": "CESAR FRANCK",
-      "annee": 2024,
-      "dnb_admis": 81,
-      "ips": 131.9,
-      "bonus": 600
-    },
-    {
-      "code": "0752529S",
-      "nom": "CHAPTAL",
-      "annee": 2024,
-      "dnb_admis": 118,
-      "ips": 143.9,
-      "bonus": 0
-    },
-    {
-      "code": "0752525M",
-      "nom": "CHARLEMAGNE",
-      "annee": 2024,
-      "dnb_admis": 103,
-      "ips": 130,
-      "bonus": 0
-    },
-    {
-      "code": "0751706X",
-      "nom": "CHARLES PEGUY",
-      "annee": 2024,
-      "dnb_admis": 86,
-      "ips": 111.9,
-      "bonus": 600
-    },
-    {
-      "code": "0752547L",
-      "nom": "CLAUDE BERNARD",
-      "annee": 2024,
-      "dnb_admis": 62,
-      "ips": 114.3,
-      "bonus": 600
-    },
-    {
-      "code": "0750360J",
-      "nom": "CLAUDE CHAPPE",
-      "annee": 2024,
-      "dnb_admis": 88,
-      "ips": 122.2,
-      "bonus": 600
-    },
-    {
-      "code": "0752317L",
-      "nom": "CLAUDE DEBUSSY",
-      "annee": 2024,
-      "dnb_admis": 107,
-      "ips": 129.8,
-      "bonus": 600
-    },
-    {
-      "code": "0752539C",
-      "nom": "CLAUDE MONET",
-      "annee": 2024,
-      "dnb_admis": 101,
-      "ips": 126.2,
-      "bonus": 600
-    },
-    {
-      "code": "0755241P",
-      "nom": "COLETTE BESSON",
-      "annee": 2024,
-      "dnb_admis": 79,
-      "ips": 102.5,
-      "bonus": 1200
-    },
-    {
-      "code": "0751791P",
-      "nom": "CONDORCET",
-      "annee": 2024,
-      "dnb_admis": 192,
-      "ips": 144.1,
-      "bonus": 0
-    },
-    {
-      "code": "0755030K",
-      "nom": "DANIEL MAYER",
-      "annee": 2024,
-      "dnb_admis": 69,
-      "ips": 74.4,
-      "bonus": 1200
-    },
-    {
-      "code": "0751563S",
-      "nom": "DE STAEL",
-      "annee": 2024,
-      "dnb_admis": 87,
-      "ips": 109.6,
-      "bonus": 600
-    },
-    {
-      "code": "0755095F",
-      "nom": "EDGAR VARESE",
-      "annee": 2024,
-      "dnb_admis": 67,
-      "ips": 108.4,
-      "bonus": 600
-    },
-    {
-      "code": "0753345D",
-      "nom": "EDMOND MICHELET",
-      "annee": 2024,
-      "dnb_admis": 74,
-      "ips": 96.4,
-      "bonus": 1200
-    },
-    {
-      "code": "0751707Y",
-      "nom": "EDOUARD PAILLERON",
-      "annee": 2024,
-      "dnb_admis": 61,
-      "ips": 104.6,
-      "bonus": 1200
-    },
-    {
-      "code": "0752385K",
-      "nom": "ELSA TRIOLET",
-      "annee": 2024,
-      "dnb_admis": 73,
-      "ips": 101.5,
-      "bonus": 1200
-    },
-    {
-      "code": "0753937X",
-      "nom": "EVARISTE GALOIS",
-      "annee": 2024,
-      "dnb_admis": 84,
-      "ips": 92.8,
-      "bonus": 1200
-    },
-    {
-      "code": "0753046D",
-      "nom": "FLORA TRISTAN",
-      "annee": 2024,
-      "dnb_admis": 104,
-      "ips": 102.7,
-      "bonus": 1200
-    },
-    {
-      "code": "0752693V",
-      "nom": "FRANCOIS COUPERIN",
-      "annee": 2024,
-      "dnb_admis": 93,
-      "ips": 128.7,
-      "bonus": 0
-    },
-    {
-      "code": "0752544H",
-      "nom": "FRANCOIS VILLON",
-      "annee": 2024,
-      "dnb_admis": 76,
-      "ips": 92.4,
-      "bonus": 1200
-    },
-    {
-      "code": "0750552T",
-      "nom": "FRANCOISE DOLTO",
-      "annee": 2024,
-      "dnb_admis": 95,
-      "ips": 116.5,
-      "bonus": 600
-    },
-    {
-      "code": "0755778Y",
-      "nom": "FRANCOISE SELIGMANN",
-      "annee": 2024,
-      "dnb_admis": 57,
-      "ips": 98.2,
-      "bonus": 1200
-    },
-    {
-      "code": "0752540D",
-      "nom": "GABRIEL FAURE",
-      "annee": 2024,
-      "dnb_admis": 90,
-      "ips": 108.3,
-      "bonus": 1200
-    },
-    {
-      "code": "0752316K",
-      "nom": "GEORGE SAND",
-      "annee": 2024,
-      "dnb_admis": 94,
-      "ips": 112.3,
-      "bonus": 600
-    },
-    {
-      "code": "0752957G",
-      "nom": "GEORGES BRAQUE",
-      "annee": 2024,
-      "dnb_admis": 112,
-      "ips": 116.7,
-      "bonus": 600
-    },
-    {
-      "code": "0750507U",
-      "nom": "GEORGES BRASSENS",
-      "annee": 2024,
-      "dnb_admis": 120,
-      "ips": 102.5,
-      "bonus": 1200
-    },
-    {
-      "code": "0750546L",
-      "nom": "GEORGES CLEMENCEAU",
-      "annee": 2024,
-      "dnb_admis": 71,
-      "ips": 80,
-      "bonus": 1200
-    },
-    {
-      "code": "0750444A",
-      "nom": "GEORGES COURTELINE",
-      "annee": 2024,
-      "dnb_admis": 128,
-      "ips": 123.6,
-      "bonus": 600
-    },
-    {
-      "code": "0752192A",
-      "nom": "GEORGES DUHAMEL",
-      "annee": 2024,
-      "dnb_admis": 99,
-      "ips": 125.8,
-      "bonus": 600
-    },
-    {
-      "code": "0752606A",
-      "nom": "GEORGES MELIES",
-      "annee": 2024,
-      "dnb_admis": 62,
-      "ips": 88.3,
-      "bonus": 1200
-    },
-    {
-      "code": "0753938Y",
-      "nom": "GEORGES ROUAULT",
-      "annee": 2024,
-      "dnb_admis": 79,
-      "ips": 90,
-      "bonus": 1200
-    },
-    {
-      "code": "0752195D",
-      "nom": "GERARD PHILIPE",
-      "annee": 2024,
-      "dnb_admis": 68,
-      "ips": 96.5,
-      "bonus": 1200
-    },
-    {
-      "code": "0753936W",
-      "nom": "GERMAINE TILLION",
-      "annee": 2024,
-      "dnb_admis": 81,
-      "ips": 99.4,
-      "bonus": 1200
-    },
-    {
-      "code": "0752190Y",
-      "nom": "GUILLAUME APOLLINAIRE",
-      "annee": 2024,
-      "dnb_admis": 93,
-      "ips": 99.5,
-      "bonus": 1200
-    },
-    {
-      "code": "0752695X",
-      "nom": "GUILLAUME BUDE",
-      "annee": 2024,
-      "dnb_admis": 90,
-      "ips": 93.5,
-      "bonus": 1200
-    },
-    {
-      "code": "0753518S",
-      "nom": "GUSTAVE FLAUBERT",
-      "annee": 2024,
-      "dnb_admis": 103,
-      "ips": 108.8,
-      "bonus": 600
-    },
-    {
-      "code": "0752189X",
-      "nom": "GUY FLAVIEN",
-      "annee": 2024,
-      "dnb_admis": 104,
-      "ips": 118.3,
-      "bonus": 600
-    },
-    {
-      "code": "0752252R",
-      "nom": "HECTOR BERLIOZ",
-      "annee": 2024,
-      "dnb_admis": 144,
-      "ips": 100,
-      "bonus": 1200
-    },
-    {
-      "code": "0752556W",
-      "nom": "HELENE BOUCHER",
-      "annee": 2024,
-      "dnb_admis": 92,
-      "ips": 117.4,
-      "bonus": 600
-    },
-    {
-      "code": "0752555V",
-      "nom": "HENRI BERGSON",
-      "annee": 2024,
-      "dnb_admis": 80,
-      "ips": 102.2,
-      "bonus": 1200
-    },
-    {
-      "code": "0752526N",
-      "nom": "HENRI IV",
-      "annee": 2024,
-      "dnb_admis": 157,
-      "ips": 151.1,
-      "bonus": 0
-    },
-    {
-      "code": "0750591K",
-      "nom": "HENRI MATISSE",
-      "annee": 2024,
-      "dnb_admis": 102,
-      "ips": 118.2,
-      "bonus": 600
-    },
-    {
-      "code": "0752553T",
-      "nom": "HONORE DE BALZAC",
-      "annee": 2024,
-      "dnb_admis": 192,
-      "ips": 125.5,
-      "bonus": 600
-    },
-    {
-      "code": "0752532V",
-      "nom": "JACQUES DECOUR",
-      "annee": 2024,
-      "dnb_admis": 146,
-      "ips": 126.6,
-      "bonus": 600
-    },
-    {
-      "code": "0752187V",
-      "nom": "JACQUES PREVERT",
-      "annee": 2024,
-      "dnb_admis": 72,
-      "ips": 119.8,
-      "bonus": 600
-    },
-    {
-      "code": "0752548M",
-      "nom": "JANSON DE SAILLY",
-      "annee": 2024,
-      "dnb_admis": 334,
-      "ips": 128.9,
-      "bonus": 0
-    },
-    {
-      "code": "0752550P",
-      "nom": "JEAN DE LA FONTAINE",
-      "annee": 2024,
-      "dnb_admis": 198,
-      "ips": 135.3,
-      "bonus": 0
-    },
-    {
-      "code": "0750611G",
-      "nom": "JEAN MOULIN",
-      "annee": 2024,
-      "dnb_admis": 120,
-      "ips": 122.8,
-      "bonus": 600
-    },
-    {
-      "code": "0753939Z",
-      "nom": "JEAN PERRIN",
-      "annee": 2024,
-      "dnb_admis": 65,
-      "ips": 81.1,
-      "bonus": 1200
-    },
-    {
-      "code": "0750478M",
-      "nom": "JEAN-BAPTISTE CLEMENT",
-      "annee": 2024,
-      "dnb_admis": 59,
-      "ips": 105.6,
-      "bonus": 600
-    },
-    {
-      "code": "0751703U",
-      "nom": "JEAN-BAPTISTE POQUELIN",
-      "annee": 2024,
-      "dnb_admis": 75,
-      "ips": 125.8,
-      "bonus": 600
-    },
-    {
-      "code": "0752549N",
-      "nom": "JEAN-BAPTISTE SAY",
-      "annee": 2024,
-      "dnb_admis": 172,
-      "ips": 147.5,
-      "bonus": 0
-    },
-    {
-      "code": "0752542F",
-      "nom": "JEAN-FRANCOIS OEBEN",
-      "annee": 2024,
-      "dnb_admis": 101,
-      "ips": 118.6,
-      "bonus": 600
-    },
-    {
-      "code": "0752533W",
-      "nom": "JULES FERRY",
-      "annee": 2024,
-      "dnb_admis": 100,
-      "ips": 127.1,
-      "bonus": 600
-    },
-    {
-      "code": "0752249M",
-      "nom": "JULES ROMAINS",
-      "annee": 2024,
-      "dnb_admis": 130,
-      "ips": 127.6,
-      "bonus": 600
-    },
-    {
-      "code": "0750610F",
-      "nom": "JULES VERNE",
-      "annee": 2024,
-      "dnb_admis": 86,
-      "ips": 105.2,
-      "bonus": 1200
-    },
-    {
-      "code": "0753047E",
-      "nom": "LA GRANGE AUX BELLES",
-      "annee": 2024,
-      "dnb_admis": 76,
-      "ips": 114.2,
-      "bonus": 600
-    },
-    {
-      "code": "0755779Z",
-      "nom": "LA ROSE BLANCHE",
-      "annee": 2024,
-      "dnb_admis": 82,
-      "ips": 111.2,
-      "bonus": 600
-    },
-    {
-      "code": "0752534X",
-      "nom": "LAMARTINE",
-      "annee": 2024,
-      "dnb_admis": 93,
-      "ips": 138.4,
-      "bonus": 0
-    },
-    {
-      "code": "0752531U",
-      "nom": "LAVOISIER",
-      "annee": 2024,
-      "dnb_admis": 89,
-      "ips": 148.5,
-      "bonus": 0
-    },
-    {
-      "code": "0752696Y",
-      "nom": "LEON GAMBETTA",
-      "annee": 2024,
-      "dnb_admis": 114,
-      "ips": 106.1,
-      "bonus": 1200
-    },
-    {
-      "code": "0752251P",
-      "nom": "LOUISE MICHEL",
-      "annee": 2024,
-      "dnb_admis": 120,
-      "ips": 125.4,
-      "bonus": 600
-    },
-    {
-      "code": "0750465Y",
-      "nom": "LUCIE ET RAYMOND AUBRAC",
-      "annee": 2024,
-      "dnb_admis": 94,
-      "ips": 118.3,
-      "bonus": 600
-    },
-    {
-      "code": "0750550R",
-      "nom": "LUCIE FAURE",
-      "annee": 2024,
-      "dnb_admis": 73,
-      "ips": 105.4,
-      "bonus": 1200
-    },
-    {
-      "code": "0754706H",
-      "nom": "MARIE CURIE",
-      "annee": 2024,
-      "dnb_admis": 72,
-      "ips": 103.1,
-      "bonus": 1200
-    },
-    {
-      "code": "0752196E",
-      "nom": "MARX DORMOY",
-      "annee": 2024,
-      "dnb_admis": 88,
-      "ips": 88.3,
-      "bonus": 1200
-    },
-    {
-      "code": "0752557X",
-      "nom": "MAURICE RAVEL",
-      "annee": 2024,
-      "dnb_admis": 73,
-      "ips": 117.8,
-      "bonus": 600
-    },
-    {
-      "code": "0751793S",
-      "nom": "MAURICE UTRILLO",
-      "annee": 2024,
-      "dnb_admis": 65,
-      "ips": 87.1,
-      "bonus": 1200
-    },
-    {
-      "code": "0752318M",
-      "nom": "MODIGLIANI",
-      "annee": 2024,
-      "dnb_admis": 106,
-      "ips": 105.1,
-      "bonus": 1200
-    },
-    {
-      "code": "0752551R",
-      "nom": "MOLIERE",
-      "annee": 2024,
-      "dnb_admis": 125,
-      "ips": 115.6,
-      "bonus": 600
-    },
-    {
-      "code": "0752527P",
-      "nom": "MONTAIGNE",
-      "annee": 2024,
-      "dnb_admis": 141,
-      "ips": 139.4,
-      "bonus": 0
-    },
-    {
-      "code": "0752523K",
-      "nom": "MONTGOLFIER",
-      "annee": 2024,
-      "dnb_admis": 96,
-      "ips": 120.3,
-      "bonus": 600
-    },
-    {
-      "code": "0750525N",
-      "nom": "MOULIN DES PRES",
-      "annee": 2024,
-      "dnb_admis": 95,
-      "ips": 121.1,
-      "bonus": 600
-    },
-    {
-      "code": "0752530T",
-      "nom": "OCTAVE GREARD",
-      "annee": 2024,
-      "dnb_admis": 126,
-      "ips": 139.8,
-      "bonus": 0
-    },
-    {
-      "code": "0752543G",
-      "nom": "PAUL BERT",
-      "annee": 2024,
-      "dnb_admis": 78,
-      "ips": 129.8,
-      "bonus": 0
-    },
-    {
-      "code": "0752250N",
-      "nom": "PAUL GAUGUIN",
-      "annee": 2024,
-      "dnb_admis": 99,
-      "ips": 134.5,
-      "bonus": 0
-    },
-    {
-      "code": "0752537A",
-      "nom": "PAUL VALERY",
-      "annee": 2024,
-      "dnb_admis": 118,
-      "ips": 109,
-      "bonus": 1200
-    },
-    {
-      "code": "0750609E",
-      "nom": "PAUL VERLAINE",
-      "annee": 2024,
-      "dnb_admis": 101,
-      "ips": 121.2,
-      "bonus": 600
-    },
-    {
-      "code": "0751790N",
-      "nom": "PIERRE ALVISET",
-      "annee": 2024,
-      "dnb_admis": 130,
-      "ips": 145.9,
-      "bonus": 0
-    },
-    {
-      "code": "0752107H",
-      "nom": "PIERRE DE RONSARD",
-      "annee": 2024,
-      "dnb_admis": 150,
-      "ips": 127.8,
-      "bonus": 600
-    },
-    {
-      "code": "0752198G",
-      "nom": "PIERRE MENDES FRANCE",
-      "annee": 2024,
-      "dnb_admis": 105,
-      "ips": 87.5,
-      "bonus": 1200
-    },
-    {
-      "code": "0750387N",
-      "nom": "PIERRE-JEAN DE BERANGER",
-      "annee": 2024,
-      "dnb_admis": 79,
-      "ips": 140.3,
-      "bonus": 0
-    },
-    {
-      "code": "0754528P",
-      "nom": "PILATRE DE ROZIER",
-      "annee": 2024,
-      "dnb_admis": 101,
-      "ips": 114,
-      "bonus": 600
-    },
-    {
-      "code": "0752186U",
-      "nom": "RAYMOND QUENEAU",
-      "annee": 2024,
-      "dnb_admis": 108,
-      "ips": 137.2,
-      "bonus": 0
-    },
-    {
-      "code": "0754355B",
-      "nom": "ROBERT DOISNEAU",
-      "annee": 2024,
-      "dnb_admis": 76,
-      "ips": 97.4,
-      "bonus": 1200
-    },
-    {
-      "code": "0752538B",
-      "nom": "RODIN",
-      "annee": 2024,
-      "dnb_admis": 114,
-      "ips": 134.4,
-      "bonus": 0
-    },
-    {
-      "code": "0750407K",
-      "nom": "ROGNONI",
-      "annee": 2024,
-      "dnb_admis": 52,
-      "ips": 157.7,
-      "bonus": 0
-    },
-    {
-      "code": "0750429J",
-      "nom": "ROLAND DORGELES",
-      "annee": 2024,
-      "dnb_admis": 98,
-      "ips": 125,
-      "bonus": 600
-    },
-    {
-      "code": "0754253R",
-      "nom": "SAINT-EXUPERY",
-      "annee": 2024,
-      "dnb_admis": 81,
-      "ips": 135.9,
-      "bonus": 600
-    },
-    {
-      "code": "0750575T",
-      "nom": "SONIA DELAUNAY",
-      "annee": 2024,
-      "dnb_admis": 71,
-      "ips": 92.4,
-      "bonus": 1200
-    },
-    {
-      "code": "0752554U",
-      "nom": "STEPHANE MALLARME",
-      "annee": 2024,
-      "dnb_admis": 143,
-      "ips": 124,
-      "bonus": 600
-    },
-    {
-      "code": "0755747P",
-      "nom": "SUZANNE LACORE",
-      "annee": 2024,
-      "dnb_admis": 55,
-      "ips": 93.6,
-      "bonus": 1200
-    },
-    {
-      "code": "0755000C",
-      "nom": "THOMAS MANN",
-      "annee": 2024,
-      "dnb_admis": 110,
-      "ips": 98.3,
-      "bonus": 1200
-    },
-    {
-      "code": "0750584C",
-      "nom": "VALMY",
-      "annee": 2024,
-      "dnb_admis": 65,
-      "ips": 113.3,
-      "bonus": 600
-    },
-    {
-      "code": "0752528R",
-      "nom": "VICTOR DURUY",
-      "annee": 2024,
-      "dnb_admis": 108,
-      "ips": 150.1,
-      "bonus": 0
-    },
-    {
-      "code": "0752524L",
-      "nom": "VICTOR HUGO",
-      "annee": 2024,
-      "dnb_admis": 101,
-      "ips": 130.5,
-      "bonus": 0
-    },
-    {
-      "code": "0752536Z",
-      "nom": "VOLTAIRE",
-      "annee": 2024,
-      "dnb_admis": 95,
-      "ips": 124.3,
-      "bonus": 600
-    },
-    {
-      "code": "0750484U",
-      "nom": "W.A. MOZART",
-      "annee": 2024,
-      "dnb_admis": 57,
-      "ips": 95.4,
-      "bonus": 1200
-    },
-    {
-      "code": "0752108J",
-      "nom": "YVONNE LE TAC",
-      "annee": 2024,
-      "dnb_admis": 105,
-      "ips": 140.4,
-      "bonus": 0
-    }
-   ]
+  {
+    "code": "0750360J",
+    "nom": "CLAUDE CHAPPE",
+    "bonus": 600,
+    "ips": 122.2,
+    "dnb_taux_reussite": 86,
+    "dnb_admis": 88,
+    "dnb_admis_mentions": 75,
+    "dnb_admis_tres_bien": 49,
+    "dnb_ecrit": 12.7
+  },
+  {
+    "code": "0750362L",
+    "nom": "BEAUMARCHAIS",
+    "bonus": 600,
+    "ips": 127.8,
+    "dnb_taux_reussite": 96,
+    "dnb_admis": 96,
+    "dnb_admis_mentions": 86,
+    "dnb_admis_tres_bien": 53,
+    "dnb_ecrit": 13.4
+  },
+  {
+    "code": "0750387N",
+    "nom": "PIERRE-JEAN DE BERANGER",
+    "bonus": 0,
+    "ips": 140.3,
+    "dnb_taux_reussite": 98,
+    "dnb_admis": 85,
+    "dnb_admis_mentions": 79,
+    "dnb_admis_tres_bien": 51,
+    "dnb_ecrit": 13.7
+  },
+  {
+    "code": "0750407K",
+    "nom": "ROGNONI",
+    "bonus": 0,
+    "ips": 157.7,
+    "dnb_taux_reussite": 98,
+    "dnb_admis": 50,
+    "dnb_admis_mentions": 48,
+    "dnb_admis_tres_bien": 38,
+    "dnb_ecrit": 14.8
+  },
+  {
+    "code": "0750429J",
+    "nom": "ROLAND DORGELES",
+    "bonus": 600,
+    "ips": 125,
+    "dnb_taux_reussite": 91,
+    "dnb_admis": 97,
+    "dnb_admis_mentions": 81,
+    "dnb_admis_tres_bien": 45,
+    "dnb_ecrit": 11.7
+  },
+  {
+    "code": "0750444A",
+    "nom": "GEORGES COURTELINE",
+    "bonus": 600,
+    "ips": 123.6,
+    "dnb_taux_reussite": 91,
+    "dnb_admis": 125,
+    "dnb_admis_mentions": 121,
+    "dnb_admis_tres_bien": 70,
+    "dnb_ecrit": 12.3
+  },
+  {
+    "code": "0750445B",
+    "nom": "ALBERTO GIACOMETTI",
+    "bonus": 1200,
+    "ips": 100.1,
+    "dnb_taux_reussite": 85,
+    "dnb_admis": 97,
+    "dnb_admis_mentions": 88,
+    "dnb_admis_tres_bien": 42,
+    "dnb_ecrit": 10.8
+  },
+  {
+    "code": "0750465Y",
+    "nom": "LUCIE ET RAYMOND AUBRAC",
+    "bonus": 600,
+    "ips": 118.3,
+    "dnb_taux_reussite": 85,
+    "dnb_admis": 81,
+    "dnb_admis_mentions": 73,
+    "dnb_admis_tres_bien": 33,
+    "dnb_ecrit": 11.3
+  },
+  {
+    "code": "0750478M",
+    "nom": "JEAN-BAPTISTE CLEMENT",
+    "bonus": 600,
+    "ips": 105.6,
+    "dnb_taux_reussite": 82,
+    "dnb_admis": 76,
+    "dnb_admis_mentions": 59,
+    "dnb_admis_tres_bien": 26,
+    "dnb_ecrit": 10.2
+  },
+  {
+    "code": "0750484U",
+    "nom": "W.A. MOZART",
+    "bonus": 1200,
+    "ips": 95.4,
+    "dnb_taux_reussite": 82,
+    "dnb_admis": 59,
+    "dnb_admis_mentions": 47,
+    "dnb_admis_tres_bien": 20,
+    "dnb_ecrit": 10.4
+  },
+  {
+    "code": "0750507U",
+    "nom": "GEORGES BRASSENS",
+    "bonus": 1200,
+    "ips": 102.5,
+    "dnb_taux_reussite": 84,
+    "dnb_admis": 116,
+    "dnb_admis_mentions": 102,
+    "dnb_admis_tres_bien": 43,
+    "dnb_ecrit": 10.6
+  },
+  {
+    "code": "0750525N",
+    "nom": "MOULIN DES PRES",
+    "bonus": 600,
+    "ips": 121.1,
+    "dnb_taux_reussite": 89,
+    "dnb_admis": 98,
+    "dnb_admis_mentions": 82,
+    "dnb_admis_tres_bien": 48,
+    "dnb_ecrit": 12
+  },
+  {
+    "code": "0750546L",
+    "nom": "GEORGES CLEMENCEAU",
+    "bonus": 1200,
+    "ips": 80,
+    "dnb_taux_reussite": 69,
+    "dnb_admis": 57,
+    "dnb_admis_mentions": 42,
+    "dnb_admis_tres_bien": 13,
+    "dnb_ecrit": 8.5
+  },
+  {
+    "code": "0750550R",
+    "nom": "LUCIE FAURE",
+    "bonus": 1200,
+    "ips": 105.4,
+    "dnb_taux_reussite": 62,
+    "dnb_admis": 58,
+    "dnb_admis_mentions": 47,
+    "dnb_admis_tres_bien": 23,
+    "dnb_ecrit": 9.7
+  },
+  {
+    "code": "0750552T",
+    "nom": "FRANCOISE DOLTO",
+    "bonus": 600,
+    "ips": 116.5,
+    "dnb_taux_reussite": 85,
+    "dnb_admis": 99,
+    "dnb_admis_mentions": 81,
+    "dnb_admis_tres_bien": 37,
+    "dnb_ecrit": 10.5
+  },
+  {
+    "code": "0750575T",
+    "nom": "SONIA DELAUNAY",
+    "bonus": 1200,
+    "ips": 92.4,
+    "dnb_taux_reussite": 77,
+    "dnb_admis": 63,
+    "dnb_admis_mentions": 46,
+    "dnb_admis_tres_bien": 12,
+    "dnb_ecrit": 8.1
+  },
+  {
+    "code": "0750584C",
+    "nom": "VALMY",
+    "bonus": 600,
+    "ips": 113.3,
+    "dnb_taux_reussite": 77,
+    "dnb_admis": 66,
+    "dnb_admis_mentions": 52,
+    "dnb_admis_tres_bien": 29,
+    "dnb_ecrit": 10.9
+  },
+  {
+    "code": "0750591K",
+    "nom": "HENRI MATISSE",
+    "bonus": 600,
+    "ips": 118.2,
+    "dnb_taux_reussite": 95,
+    "dnb_admis": 121,
+    "dnb_admis_mentions": 96,
+    "dnb_admis_tres_bien": 51,
+    "dnb_ecrit": 12
+  },
+  {
+    "code": "0750607C",
+    "nom": "ALAIN FOURNIER",
+    "bonus": 600,
+    "ips": 118,
+    "dnb_taux_reussite": 95,
+    "dnb_admis": 122,
+    "dnb_admis_mentions": 114,
+    "dnb_admis_tres_bien": 69,
+    "dnb_ecrit": 12.6
+  },
+  {
+    "code": "0750608D",
+    "nom": "ANNE FRANK",
+    "bonus": 600,
+    "ips": 125.1,
+    "dnb_taux_reussite": 95,
+    "dnb_admis": 100,
+    "dnb_admis_mentions": 92,
+    "dnb_admis_tres_bien": 52,
+    "dnb_ecrit": 12.8
+  },
+  {
+    "code": "0750609E",
+    "nom": "PAUL VERLAINE",
+    "bonus": 600,
+    "ips": 121.2,
+    "dnb_taux_reussite": 82,
+    "dnb_admis": 112,
+    "dnb_admis_mentions": 89,
+    "dnb_admis_tres_bien": 36,
+    "dnb_ecrit": 10.8
+  },
+  {
+    "code": "0750610F",
+    "nom": "JULES VERNE",
+    "bonus": 1200,
+    "ips": 105.2,
+    "dnb_taux_reussite": 83,
+    "dnb_admis": 87,
+    "dnb_admis_mentions": 79,
+    "dnb_admis_tres_bien": 40,
+    "dnb_ecrit": 11.7
+  },
+  {
+    "code": "0750611G",
+    "nom": "JEAN MOULIN",
+    "bonus": 600,
+    "ips": 122.8,
+    "dnb_taux_reussite": 91,
+    "dnb_admis": 116,
+    "dnb_admis_mentions": 108,
+    "dnb_admis_tres_bien": 75,
+    "dnb_ecrit": 12.3
+  },
+  {
+    "code": "0751563S",
+    "nom": "DE STAEL",
+    "bonus": 600,
+    "ips": 109.6,
+    "dnb_taux_reussite": 91,
+    "dnb_admis": 90,
+    "dnb_admis_mentions": 78,
+    "dnb_admis_tres_bien": 40,
+    "dnb_ecrit": 12.5
+  },
+  {
+    "code": "0751703U",
+    "nom": "JEAN-BAPTISTE POQUELIN",
+    "bonus": 600,
+    "ips": 125.8,
+    "dnb_taux_reussite": 90,
+    "dnb_admis": 72,
+    "dnb_admis_mentions": 62,
+    "dnb_admis_tres_bien": 40,
+    "dnb_ecrit": 11.3
+  },
+  {
+    "code": "0751705W",
+    "nom": "ALPHONSE DAUDET",
+    "bonus": 1200,
+    "ips": 104.6,
+    "dnb_taux_reussite": 83,
+    "dnb_admis": 103,
+    "dnb_admis_mentions": 89,
+    "dnb_admis_tres_bien": 41,
+    "dnb_ecrit": 11
+  },
+  {
+    "code": "0751706X",
+    "nom": "CHARLES PEGUY",
+    "bonus": 600,
+    "ips": 111.9,
+    "dnb_taux_reussite": 90,
+    "dnb_admis": 91,
+    "dnb_admis_mentions": 81,
+    "dnb_admis_tres_bien": 43,
+    "dnb_ecrit": 11.5
+  },
+  {
+    "code": "0751707Y",
+    "nom": "EDOUARD PAILLERON",
+    "bonus": 1200,
+    "ips": 104.6,
+    "dnb_taux_reussite": 92,
+    "dnb_admis": 80,
+    "dnb_admis_mentions": 72,
+    "dnb_admis_tres_bien": 52,
+    "dnb_ecrit": 13.4
+  },
+  {
+    "code": "0751790N",
+    "nom": "PIERRE ALVISET",
+    "bonus": 0,
+    "ips": 145.9,
+    "dnb_taux_reussite": 100,
+    "dnb_admis": 138,
+    "dnb_admis_mentions": 137,
+    "dnb_admis_tres_bien": 112,
+    "dnb_ecrit": 14.8
+  },
+  {
+    "code": "0751791P",
+    "nom": "CONDORCET",
+    "bonus": 0,
+    "ips": 144.1,
+    "dnb_taux_reussite": 96,
+    "dnb_admis": 190,
+    "dnb_admis_mentions": 177,
+    "dnb_admis_tres_bien": 141,
+    "dnb_ecrit": 13.6
+  },
+  {
+    "code": "0751793S",
+    "nom": "MAURICE UTRILLO",
+    "bonus": 1200,
+    "ips": 87.1,
+    "dnb_taux_reussite": 87,
+    "dnb_admis": 78,
+    "dnb_admis_mentions": 64,
+    "dnb_admis_tres_bien": 25,
+    "dnb_ecrit": 10.4
+  },
+  {
+    "code": "0752107H",
+    "nom": "PIERRE DE RONSARD",
+    "bonus": 600,
+    "ips": 127.8,
+    "dnb_taux_reussite": 91,
+    "dnb_admis": 148,
+    "dnb_admis_mentions": 135,
+    "dnb_admis_tres_bien": 69,
+    "dnb_ecrit": 12.9
+  },
+  {
+    "code": "0752108J",
+    "nom": "YVONNE LE TAC",
+    "bonus": 0,
+    "ips": 140.4,
+    "dnb_taux_reussite": 93,
+    "dnb_admis": 100,
+    "dnb_admis_mentions": 90,
+    "dnb_admis_tres_bien": 64,
+    "dnb_ecrit": 13.7
+  },
+  {
+    "code": "0752186U",
+    "nom": "RAYMOND QUENEAU",
+    "bonus": 0,
+    "ips": 137.2,
+    "dnb_taux_reussite": 94,
+    "dnb_admis": 104,
+    "dnb_admis_mentions": 97,
+    "dnb_admis_tres_bien": 73,
+    "dnb_ecrit": 12.9
+  },
+  {
+    "code": "0752187V",
+    "nom": "JACQUES PREVERT",
+    "bonus": 600,
+    "ips": 119.8,
+    "dnb_taux_reussite": 96,
+    "dnb_admis": 73,
+    "dnb_admis_mentions": 67,
+    "dnb_admis_tres_bien": 44,
+    "dnb_ecrit": 12.1
+  },
+  {
+    "code": "0752189X",
+    "nom": "GUY FLAVIEN",
+    "bonus": 600,
+    "ips": 118.3,
+    "dnb_taux_reussite": 92,
+    "dnb_admis": 98,
+    "dnb_admis_mentions": 79,
+    "dnb_admis_tres_bien": 36,
+    "dnb_ecrit": 12.3
+  },
+  {
+    "code": "0752190Y",
+    "nom": "GUILLAUME APOLLINAIRE",
+    "bonus": 1200,
+    "ips": 99.5,
+    "dnb_taux_reussite": 90,
+    "dnb_admis": 96,
+    "dnb_admis_mentions": 80,
+    "dnb_admis_tres_bien": 43,
+    "dnb_ecrit": 11.8
+  },
+  {
+    "code": "0752192A",
+    "nom": "GEORGES DUHAMEL",
+    "bonus": 600,
+    "ips": 125.8,
+    "dnb_taux_reussite": 89,
+    "dnb_admis": 98,
+    "dnb_admis_mentions": 88,
+    "dnb_admis_tres_bien": 50,
+    "dnb_ecrit": 12.1
+  },
+  {
+    "code": "0752195D",
+    "nom": "GERARD PHILIPE",
+    "bonus": 1200,
+    "ips": 96.5,
+    "dnb_taux_reussite": 85,
+    "dnb_admis": 69,
+    "dnb_admis_mentions": 54,
+    "dnb_admis_tres_bien": 21,
+    "dnb_ecrit": 9.8
+  },
+  {
+    "code": "0752196E",
+    "nom": "MARX DORMOY",
+    "bonus": 1200,
+    "ips": 88.3,
+    "dnb_taux_reussite": 76,
+    "dnb_admis": 68,
+    "dnb_admis_mentions": 56,
+    "dnb_admis_tres_bien": 27,
+    "dnb_ecrit": 9.2
+  },
+  {
+    "code": "0752198G",
+    "nom": "PIERRE MENDES FRANCE",
+    "bonus": 1200,
+    "ips": 87.5,
+    "dnb_taux_reussite": 85,
+    "dnb_admis": 89,
+    "dnb_admis_mentions": 67,
+    "dnb_admis_tres_bien": 20,
+    "dnb_ecrit": 8.9
+  },
+  {
+    "code": "0752248L",
+    "nom": "CESAR FRANCK",
+    "bonus": 600,
+    "ips": 131.9,
+    "dnb_taux_reussite": 84,
+    "dnb_admis": 64,
+    "dnb_admis_mentions": 53,
+    "dnb_admis_tres_bien": 29,
+    "dnb_ecrit": 12.5
+  },
+  {
+    "code": "0752249M",
+    "nom": "JULES ROMAINS",
+    "bonus": 600,
+    "ips": 127.6,
+    "dnb_taux_reussite": 92,
+    "dnb_admis": 178,
+    "dnb_admis_mentions": 160,
+    "dnb_admis_tres_bien": 98,
+    "dnb_ecrit": 12
+  },
+  {
+    "code": "0752250N",
+    "nom": "PAUL GAUGUIN",
+    "bonus": 0,
+    "ips": 134.5,
+    "dnb_taux_reussite": 99,
+    "dnb_admis": 103,
+    "dnb_admis_mentions": 96,
+    "dnb_admis_tres_bien": 61,
+    "dnb_ecrit": 12.5
+  },
+  {
+    "code": "0752251P",
+    "nom": "LOUISE MICHEL",
+    "bonus": 600,
+    "ips": 125.4,
+    "dnb_taux_reussite": 95,
+    "dnb_admis": 104,
+    "dnb_admis_mentions": 89,
+    "dnb_admis_tres_bien": 52,
+    "dnb_ecrit": 12.4
+  },
+  {
+    "code": "0752316K",
+    "nom": "GEORGE SAND",
+    "bonus": 600,
+    "ips": 112.3,
+    "dnb_taux_reussite": 94,
+    "dnb_admis": 100,
+    "dnb_admis_mentions": 92,
+    "dnb_admis_tres_bien": 39,
+    "dnb_ecrit": 11.7
+  },
+  {
+    "code": "0752317L",
+    "nom": "CLAUDE DEBUSSY",
+    "bonus": 600,
+    "ips": 129.8,
+    "dnb_taux_reussite": 100,
+    "dnb_admis": 114,
+    "dnb_admis_mentions": 108,
+    "dnb_admis_tres_bien": 85,
+    "dnb_ecrit": 13.9
+  },
+  {
+    "code": "0752318M",
+    "nom": "MODIGLIANI",
+    "bonus": 1200,
+    "ips": 105.1,
+    "dnb_taux_reussite": 81,
+    "dnb_admis": 106,
+    "dnb_admis_mentions": 82,
+    "dnb_admis_tres_bien": 40,
+    "dnb_ecrit": 10.7
+  },
+  {
+    "code": "0752319N",
+    "nom": "ANTOINE COYSEVOX",
+    "bonus": 1200,
+    "ips": 112.9,
+    "dnb_taux_reussite": 79,
+    "dnb_admis": 163,
+    "dnb_admis_mentions": 120,
+    "dnb_admis_tres_bien": 69,
+    "dnb_ecrit": 10.7
+  },
+  {
+    "code": "0752385K",
+    "nom": "ELSA TRIOLET",
+    "bonus": 1200,
+    "ips": 101.5,
+    "dnb_taux_reussite": 86,
+    "dnb_admis": 82,
+    "dnb_admis_mentions": 68,
+    "dnb_admis_tres_bien": 37,
+    "dnb_ecrit": 11
+  },
+  {
+    "code": "0752387M",
+    "nom": "ANDRE MALRAUX",
+    "bonus": 0,
+    "ips": 132.6,
+    "dnb_taux_reussite": 98,
+    "dnb_admis": 106,
+    "dnb_admis_mentions": 95,
+    "dnb_admis_tres_bien": 66,
+    "dnb_ecrit": 13.4
+  },
+  {
+    "code": "0752523K",
+    "nom": "MONTGOLFIER",
+    "bonus": 600,
+    "ips": 120.3,
+    "dnb_taux_reussite": 88,
+    "dnb_admis": 71,
+    "dnb_admis_mentions": 65,
+    "dnb_admis_tres_bien": 23,
+    "dnb_ecrit": 11.5
+  },
+  {
+    "code": "0752524L",
+    "nom": "VICTOR HUGO",
+    "bonus": 0,
+    "ips": 130.5,
+    "dnb_taux_reussite": 98,
+    "dnb_admis": 105,
+    "dnb_admis_mentions": 102,
+    "dnb_admis_tres_bien": 64,
+    "dnb_ecrit": 12.7
+  },
+  {
+    "code": "0752525M",
+    "nom": "CHARLEMAGNE",
+    "bonus": 0,
+    "ips": 130,
+    "dnb_taux_reussite": 97,
+    "dnb_admis": 110,
+    "dnb_admis_mentions": 99,
+    "dnb_admis_tres_bien": 65,
+    "dnb_ecrit": 12.4
+  },
+  {
+    "code": "0752526N",
+    "nom": "HENRI IV",
+    "bonus": 0,
+    "ips": 151.1,
+    "dnb_taux_reussite": 99,
+    "dnb_admis": 166,
+    "dnb_admis_mentions": 163,
+    "dnb_admis_tres_bien": 142,
+    "dnb_ecrit": 15.1
+  },
+  {
+    "code": "0752527P",
+    "nom": "MONTAIGNE",
+    "bonus": 0,
+    "ips": 139.4,
+    "dnb_taux_reussite": 99,
+    "dnb_admis": 146,
+    "dnb_admis_mentions": 135,
+    "dnb_admis_tres_bien": 100,
+    "dnb_ecrit": 13.6
+  },
+  {
+    "code": "0752528R",
+    "nom": "VICTOR DURUY",
+    "bonus": 0,
+    "ips": 150.1,
+    "dnb_taux_reussite": 96,
+    "dnb_admis": 143,
+    "dnb_admis_mentions": 135,
+    "dnb_admis_tres_bien": 94,
+    "dnb_ecrit": 13.3
+  },
+  {
+    "code": "0752529S",
+    "nom": "CHAPTAL",
+    "bonus": 0,
+    "ips": 143.9,
+    "dnb_taux_reussite": 98,
+    "dnb_admis": 113,
+    "dnb_admis_mentions": 104,
+    "dnb_admis_tres_bien": 72,
+    "dnb_ecrit": 13.4
+  },
+  {
+    "code": "0752530T",
+    "nom": "OCTAVE GREARD",
+    "bonus": 0,
+    "ips": 139.8,
+    "dnb_taux_reussite": 95,
+    "dnb_admis": 163,
+    "dnb_admis_mentions": 153,
+    "dnb_admis_tres_bien": 101,
+    "dnb_ecrit": 13.5
+  },
+  {
+    "code": "0752531U",
+    "nom": "LAVOISIER",
+    "bonus": 0,
+    "ips": 148.5,
+    "dnb_taux_reussite": 99,
+    "dnb_admis": 85,
+    "dnb_admis_mentions": 81,
+    "dnb_admis_tres_bien": 64,
+    "dnb_ecrit": 14
+  },
+  {
+    "code": "0752532V",
+    "nom": "JACQUES DECOUR",
+    "bonus": 600,
+    "ips": 126.6,
+    "dnb_taux_reussite": 94,
+    "dnb_admis": 123,
+    "dnb_admis_mentions": 102,
+    "dnb_admis_tres_bien": 72,
+    "dnb_ecrit": 12.9
+  },
+  {
+    "code": "0752533W",
+    "nom": "JULES FERRY",
+    "bonus": 600,
+    "ips": 127.1,
+    "dnb_taux_reussite": 90,
+    "dnb_admis": 95,
+    "dnb_admis_mentions": 85,
+    "dnb_admis_tres_bien": 46,
+    "dnb_ecrit": 12.1
+  },
+  {
+    "code": "0752534X",
+    "nom": "LAMARTINE",
+    "bonus": 0,
+    "ips": 138.4,
+    "dnb_taux_reussite": 99,
+    "dnb_admis": 93,
+    "dnb_admis_mentions": 85,
+    "dnb_admis_tres_bien": 57,
+    "dnb_ecrit": 12.9
+  },
+  {
+    "code": "0752536Z",
+    "nom": "VOLTAIRE",
+    "bonus": 600,
+    "ips": 124.3,
+    "dnb_taux_reussite": 93,
+    "dnb_admis": 103,
+    "dnb_admis_mentions": 88,
+    "dnb_admis_tres_bien": 49,
+    "dnb_ecrit": 12.1
+  },
+  {
+    "code": "0752537A",
+    "nom": "PAUL VALERY",
+    "bonus": 1200,
+    "ips": 109,
+    "dnb_taux_reussite": 86,
+    "dnb_admis": 89,
+    "dnb_admis_mentions": 69,
+    "dnb_admis_tres_bien": 25,
+    "dnb_ecrit": 11.4
+  },
+  {
+    "code": "0752538B",
+    "nom": "RODIN",
+    "bonus": 0,
+    "ips": 134.4,
+    "dnb_taux_reussite": 92,
+    "dnb_admis": 98,
+    "dnb_admis_mentions": 86,
+    "dnb_admis_tres_bien": 52,
+    "dnb_ecrit": 11.6
+  },
+  {
+    "code": "0752539C",
+    "nom": "CLAUDE MONET",
+    "bonus": 600,
+    "ips": 126.2,
+    "dnb_taux_reussite": 96,
+    "dnb_admis": 106,
+    "dnb_admis_mentions": 92,
+    "dnb_admis_tres_bien": 55,
+    "dnb_ecrit": 13.2
+  },
+  {
+    "code": "0752540D",
+    "nom": "GABRIEL FAURE",
+    "bonus": 1200,
+    "ips": 108.3,
+    "dnb_taux_reussite": 97,
+    "dnb_admis": 107,
+    "dnb_admis_mentions": 87,
+    "dnb_admis_tres_bien": 56,
+    "dnb_ecrit": 13
+  },
+  {
+    "code": "0752542F",
+    "nom": "JEAN-FRANCOIS OEBEN",
+    "bonus": 600,
+    "ips": 118.6,
+    "dnb_taux_reussite": 95,
+    "dnb_admis": 102,
+    "dnb_admis_mentions": 92,
+    "dnb_admis_tres_bien": 59,
+    "dnb_ecrit": 11.7
+  },
+  {
+    "code": "0752543G",
+    "nom": "PAUL BERT",
+    "bonus": 0,
+    "ips": 129.8,
+    "dnb_taux_reussite": 89,
+    "dnb_admis": 77,
+    "dnb_admis_mentions": 66,
+    "dnb_admis_tres_bien": 46,
+    "dnb_ecrit": 12
+  },
+  {
+    "code": "0752544H",
+    "nom": "FRANCOIS VILLON",
+    "bonus": 1200,
+    "ips": 92.4,
+    "dnb_taux_reussite": 76,
+    "dnb_admis": 89,
+    "dnb_admis_mentions": 72,
+    "dnb_admis_tres_bien": 23,
+    "dnb_ecrit": 10.5
+  },
+  {
+    "code": "0752545J",
+    "nom": "BUFFON",
+    "bonus": 0,
+    "ips": 132.8,
+    "dnb_taux_reussite": 93,
+    "dnb_admis": 157,
+    "dnb_admis_mentions": 144,
+    "dnb_admis_tres_bien": 103,
+    "dnb_ecrit": 13.4
+  },
+  {
+    "code": "0752546K",
+    "nom": "CAMILLE SEE",
+    "bonus": 0,
+    "ips": 132.1,
+    "dnb_taux_reussite": 90,
+    "dnb_admis": 156,
+    "dnb_admis_mentions": 144,
+    "dnb_admis_tres_bien": 96,
+    "dnb_ecrit": 13
+  },
+  {
+    "code": "0752547L",
+    "nom": "CLAUDE BERNARD",
+    "bonus": 600,
+    "ips": 114.3,
+    "dnb_taux_reussite": 84,
+    "dnb_admis": 68,
+    "dnb_admis_mentions": 56,
+    "dnb_admis_tres_bien": 25,
+    "dnb_ecrit": 11.3
+  },
+  {
+    "code": "0752548M",
+    "nom": "JANSON DE SAILLY",
+    "bonus": 0,
+    "ips": 128.9,
+    "dnb_taux_reussite": 97,
+    "dnb_admis": 342,
+    "dnb_admis_mentions": 323,
+    "dnb_admis_tres_bien": 202,
+    "dnb_ecrit": 13
+  },
+  {
+    "code": "0752549N",
+    "nom": "JEAN-BAPTISTE SAY",
+    "bonus": 0,
+    "ips": 147.5,
+    "dnb_taux_reussite": 92,
+    "dnb_admis": 159,
+    "dnb_admis_mentions": 149,
+    "dnb_admis_tres_bien": 105,
+    "dnb_ecrit": 14.3
+  },
+  {
+    "code": "0752550P",
+    "nom": "JEAN DE LA FONTAINE",
+    "bonus": 0,
+    "ips": 135.3,
+    "dnb_taux_reussite": 95,
+    "dnb_admis": 183,
+    "dnb_admis_mentions": 163,
+    "dnb_admis_tres_bien": 101,
+    "dnb_ecrit": 13
+  },
+  {
+    "code": "0752551R",
+    "nom": "MOLIERE",
+    "bonus": 600,
+    "ips": 115.6,
+    "dnb_taux_reussite": 95,
+    "dnb_admis": 130,
+    "dnb_admis_mentions": 107,
+    "dnb_admis_tres_bien": 53,
+    "dnb_ecrit": 12
+  },
+  {
+    "code": "0752552S",
+    "nom": "CARNOT",
+    "bonus": 0,
+    "ips": 140.4,
+    "dnb_taux_reussite": 97,
+    "dnb_admis": 142,
+    "dnb_admis_mentions": 124,
+    "dnb_admis_tres_bien": 80,
+    "dnb_ecrit": 13.3
+  },
+  {
+    "code": "0752553T",
+    "nom": "HONORE DE BALZAC",
+    "bonus": 600,
+    "ips": 125.5,
+    "dnb_taux_reussite": 90,
+    "dnb_admis": 187,
+    "dnb_admis_mentions": 167,
+    "dnb_admis_tres_bien": 110,
+    "dnb_ecrit": 12
+  },
+  {
+    "code": "0752554U",
+    "nom": "STEPHANE MALLARME",
+    "bonus": 600,
+    "ips": 124,
+    "dnb_taux_reussite": 88,
+    "dnb_admis": 176,
+    "dnb_admis_mentions": 144,
+    "dnb_admis_tres_bien": 78,
+    "dnb_ecrit": 10.9
+  },
+  {
+    "code": "0752555V",
+    "nom": "HENRI BERGSON",
+    "bonus": 1200,
+    "ips": 102.2,
+    "dnb_taux_reussite": 86,
+    "dnb_admis": 81,
+    "dnb_admis_mentions": 68,
+    "dnb_admis_tres_bien": 35,
+    "dnb_ecrit": 10.1
+  },
+  {
+    "code": "0752556W",
+    "nom": "HELENE BOUCHER",
+    "bonus": 600,
+    "ips": 117.4,
+    "dnb_taux_reussite": 95,
+    "dnb_admis": 105,
+    "dnb_admis_mentions": 83,
+    "dnb_admis_tres_bien": 42,
+    "dnb_ecrit": 11.8
+  },
+  {
+    "code": "0752557X",
+    "nom": "MAURICE RAVEL",
+    "bonus": 600,
+    "ips": 117.8,
+    "dnb_taux_reussite": 85,
+    "dnb_admis": 71,
+    "dnb_admis_mentions": 59,
+    "dnb_admis_tres_bien": 32,
+    "dnb_ecrit": 10.7
+  },
+  {
+    "code": "0752606A",
+    "nom": "GEORGES MELIES",
+    "bonus": 1200,
+    "ips": 88.3,
+    "dnb_taux_reussite": 90,
+    "dnb_admis": 72,
+    "dnb_admis_mentions": 54,
+    "dnb_admis_tres_bien": 22,
+    "dnb_ecrit": 10
+  },
+  {
+    "code": "0752693V",
+    "nom": "FRANCOIS COUPERIN",
+    "bonus": 0,
+    "ips": 128.7,
+    "dnb_taux_reussite": 99,
+    "dnb_admis": 100,
+    "dnb_admis_mentions": 96,
+    "dnb_admis_tres_bien": 53,
+    "dnb_ecrit": 13.3
+  },
+  {
+    "code": "0752694W",
+    "nom": "CAMILLE CLAUDEL",
+    "bonus": 1200,
+    "ips": 91.3,
+    "dnb_taux_reussite": 74,
+    "dnb_admis": 71,
+    "dnb_admis_mentions": 59,
+    "dnb_admis_tres_bien": 25,
+    "dnb_ecrit": 11
+  },
+  {
+    "code": "0752695X",
+    "nom": "GUILLAUME BUDE",
+    "bonus": 1200,
+    "ips": 93.5,
+    "dnb_taux_reussite": 93,
+    "dnb_admis": 93,
+    "dnb_admis_mentions": 75,
+    "dnb_admis_tres_bien": 30,
+    "dnb_ecrit": 10.3
+  },
+  {
+    "code": "0752696Y",
+    "nom": "LEON GAMBETTA",
+    "bonus": 1200,
+    "ips": 106.1,
+    "dnb_taux_reussite": 87,
+    "dnb_admis": 117,
+    "dnb_admis_mentions": 88,
+    "dnb_admis_tres_bien": 37,
+    "dnb_ecrit": 9.8
+  },
+  {
+    "code": "0752829T",
+    "nom": "BERNARD PALISSY",
+    "bonus": 600,
+    "ips": 126.6,
+    "dnb_taux_reussite": 90,
+    "dnb_admis": 69,
+    "dnb_admis_mentions": 54,
+    "dnb_admis_tres_bien": 27,
+    "dnb_ecrit": 10.9
+  },
+  {
+    "code": "0752957G",
+    "nom": "GEORGES BRAQUE",
+    "bonus": 600,
+    "ips": 116.7,
+    "dnb_taux_reussite": 81,
+    "dnb_admis": 104,
+    "dnb_admis_mentions": 95,
+    "dnb_admis_tres_bien": 59,
+    "dnb_ecrit": 11.7
+  },
+  {
+    "code": "0752958H",
+    "nom": "BORIS VIAN",
+    "bonus": 1200,
+    "ips": 93.8,
+    "dnb_taux_reussite": 68,
+    "dnb_admis": 74,
+    "dnb_admis_mentions": 56,
+    "dnb_admis_tres_bien": 19,
+    "dnb_ecrit": 9.6
+  },
+  {
+    "code": "0753046D",
+    "nom": "FLORA TRISTAN",
+    "bonus": 1200,
+    "ips": 102.7,
+    "dnb_taux_reussite": 85,
+    "dnb_admis": 101,
+    "dnb_admis_mentions": 81,
+    "dnb_admis_tres_bien": 35,
+    "dnb_ecrit": 10.1
+  },
+  {
+    "code": "0753047E",
+    "nom": "LA GRANGE AUX BELLES",
+    "bonus": 600,
+    "ips": 114.2,
+    "dnb_taux_reussite": 84,
+    "dnb_admis": 77,
+    "dnb_admis_mentions": 64,
+    "dnb_admis_tres_bien": 32,
+    "dnb_ecrit": 11.3
+  },
+  {
+    "code": "0753345D",
+    "nom": "EDMOND MICHELET",
+    "bonus": 1200,
+    "ips": 96.4,
+    "dnb_taux_reussite": 83,
+    "dnb_admis": 88,
+    "dnb_admis_mentions": 60,
+    "dnb_admis_tres_bien": 26,
+    "dnb_ecrit": 10.3
+  },
+  {
+    "code": "0753518S",
+    "nom": "GUSTAVE FLAUBERT",
+    "bonus": 600,
+    "ips": 108.8,
+    "dnb_taux_reussite": 95,
+    "dnb_admis": 129,
+    "dnb_admis_mentions": 107,
+    "dnb_admis_tres_bien": 47,
+    "dnb_ecrit": 11.6
+  },
+  {
+    "code": "0753936W",
+    "nom": "GERMAINE TILLION",
+    "bonus": 1200,
+    "ips": 99.4,
+    "dnb_taux_reussite": 89,
+    "dnb_admis": 85,
+    "dnb_admis_mentions": 66,
+    "dnb_admis_tres_bien": 30,
+    "dnb_ecrit": 11.1
+  },
+  {
+    "code": "0753937X",
+    "nom": "EVARISTE GALOIS",
+    "bonus": 1200,
+    "ips": 92.8,
+    "dnb_taux_reussite": 95,
+    "dnb_admis": 88,
+    "dnb_admis_mentions": 74,
+    "dnb_admis_tres_bien": 32,
+    "dnb_ecrit": 10.6
+  },
+  {
+    "code": "0753938Y",
+    "nom": "GEORGES ROUAULT",
+    "bonus": 1200,
+    "ips": 90,
+    "dnb_taux_reussite": 82,
+    "dnb_admis": 86,
+    "dnb_admis_mentions": 65,
+    "dnb_admis_tres_bien": 23,
+    "dnb_ecrit": 9.9
+  },
+  {
+    "code": "0753939Z",
+    "nom": "JEAN PERRIN",
+    "bonus": 1200,
+    "ips": 81.1,
+    "dnb_taux_reussite": 79,
+    "dnb_admis": 63,
+    "dnb_admis_mentions": 49,
+    "dnb_admis_tres_bien": 18,
+    "dnb_ecrit": 9.9
+  },
+  {
+    "code": "0754253R",
+    "nom": "SAINT-EXUPERY",
+    "bonus": 600,
+    "ips": 135.9,
+    "dnb_taux_reussite": 100,
+    "dnb_admis": 73,
+    "dnb_admis_mentions": 64,
+    "dnb_admis_tres_bien": 41,
+    "dnb_ecrit": 12.9
+  },
+  {
+    "code": "0754305X",
+    "nom": "ANDRE CITROEN",
+    "bonus": 600,
+    "ips": 106.8,
+    "dnb_taux_reussite": 87,
+    "dnb_admis": 126,
+    "dnb_admis_mentions": 104,
+    "dnb_admis_tres_bien": 54,
+    "dnb_ecrit": 12.2
+  },
+  {
+    "code": "0754355B",
+    "nom": "ROBERT DOISNEAU",
+    "bonus": 1200,
+    "ips": 97.4,
+    "dnb_taux_reussite": 85,
+    "dnb_admis": 75,
+    "dnb_admis_mentions": 62,
+    "dnb_admis_tres_bien": 25,
+    "dnb_ecrit": 10.1
+  },
+  {
+    "code": "0754528P",
+    "nom": "PILATRE DE ROZIER",
+    "bonus": 600,
+    "ips": 114,
+    "dnb_taux_reussite": 94,
+    "dnb_admis": 98,
+    "dnb_admis_mentions": 90,
+    "dnb_admis_tres_bien": 40,
+    "dnb_ecrit": 12.1
+  },
+  {
+    "code": "0754706H",
+    "nom": "MARIE CURIE",
+    "bonus": 1200,
+    "ips": 103.1,
+    "dnb_taux_reussite": 78,
+    "dnb_admis": 69,
+    "dnb_admis_mentions": 49,
+    "dnb_admis_tres_bien": 17,
+    "dnb_ecrit": 10.2
+  },
+  {
+    "code": "0755000C",
+    "nom": "THOMAS MANN",
+    "bonus": 1200,
+    "ips": 98.3,
+    "dnb_taux_reussite": 90,
+    "dnb_admis": 114,
+    "dnb_admis_mentions": 97,
+    "dnb_admis_tres_bien": 48,
+    "dnb_ecrit": 10.4
+  },
+  {
+    "code": "0755030K",
+    "nom": "DANIEL MAYER",
+    "bonus": 1200,
+    "ips": 74.4,
+    "dnb_taux_reussite": 86,
+    "dnb_admis": 56,
+    "dnb_admis_mentions": 32,
+    "dnb_admis_tres_bien": 10,
+    "dnb_ecrit": 8.5
+  },
+  {
+    "code": "0755095F",
+    "nom": "EDGAR VARESE",
+    "bonus": 600,
+    "ips": 108.4,
+    "dnb_taux_reussite": 84,
+    "dnb_admis": 68,
+    "dnb_admis_mentions": 56,
+    "dnb_admis_tres_bien": 27,
+    "dnb_ecrit": 11.2
+  },
+  {
+    "code": "0755241P",
+    "nom": "COLETTE BESSON",
+    "bonus": 1200,
+    "ips": 102.5,
+    "dnb_taux_reussite": 80,
+    "dnb_admis": 68,
+    "dnb_admis_mentions": 53,
+    "dnb_admis_tres_bien": 18,
+    "dnb_ecrit": 9.9
+  },
+  {
+    "code": "0755433Y",
+    "nom": "AIME CESAIRE",
+    "bonus": 1200,
+    "ips": 85.5,
+    "dnb_taux_reussite": 80,
+    "dnb_admis": 68,
+    "dnb_admis_mentions": 53,
+    "dnb_admis_tres_bien": 17,
+    "dnb_ecrit": 10.3
+  },
+  {
+    "code": "0755747P",
+    "nom": "SUZANNE LACORE",
+    "bonus": 1200,
+    "ips": 93.6,
+    "dnb_taux_reussite": 79,
+    "dnb_admis": 71,
+    "dnb_admis_mentions": 56,
+    "dnb_admis_tres_bien": 12,
+    "dnb_ecrit": 9.9
+  },
+  {
+    "code": "0755778Y",
+    "nom": "FRANCOISE SELIGMANN",
+    "bonus": 1200,
+    "ips": 98.2,
+    "dnb_taux_reussite": 94,
+    "dnb_admis": 63,
+    "dnb_admis_mentions": 55,
+    "dnb_admis_tres_bien": 21,
+    "dnb_ecrit": 11.9
+  },
+  {
+    "code": "0755779Z",
+    "nom": "LA ROSE BLANCHE",
+    "bonus": 600,
+    "ips": 111.2,
+    "dnb_taux_reussite": 75,
+    "dnb_admis": 79,
+    "dnb_admis_mentions": 72,
+    "dnb_admis_tres_bien": 36,
+    "dnb_ecrit": 11.7
+  }
+]
