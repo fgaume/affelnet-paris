@@ -1,5 +1,6 @@
 {
-    "version": "9.3.5",
+    "latest_version": "v9.4.0 14/02/2025",
     "seuils_editables": false,
-    "stats_editables": false
+    "stats_editables": false,
+    "bonus_exceptionnel": false
 }
