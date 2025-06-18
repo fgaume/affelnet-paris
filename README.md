@@ -45,3 +45,4 @@ Pour tester en local, démarrer un serveur http comme suit :
 http-server --cors='*' -p 8080 public
 ```
 
+
