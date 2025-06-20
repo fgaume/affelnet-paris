@@ -1,6 +1,6 @@
 {
-    "latest_version": "v9.4.2 18/06/2025",
-    "seuils_editables": true,
-    "stats_editables": true,
-    "bonus_exceptionnel": false
+  "latest_version": "v9.4.3 20/06/2025",
+  "seuils_editables": true,
+  "stats_editables": true,
+  "bonus_exceptionnel": false
 }
