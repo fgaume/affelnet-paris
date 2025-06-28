@@ -1,44 +1,44 @@
 [
   {
     "annee": 2025,
-    "champ": "MATHEMATIQUES",
-    "moyenne": 11.8347,
-    "ecart-type": 3.9546
-  },
-  {
-    "annee": 2025,
-    "champ": "FRANCAIS",
-    "moyenne": 12.3031,
-    "ecart-type": 3.23789
-  },
-  {
-    "annee": 2025,
-    "champ": "HISTOIRE-GEO",
-    "moyenne": 12.5116,
-    "ecart-type": 3.18119
-  },
-  {
-    "annee": 2025,
-    "champ": "LANGUES VIVANTES",
-    "moyenne": 13.1441,
-    "ecart-type": 2.99242
-  },
-  {
-    "annee": 2025,
-    "champ": "SCIENCES-TECHNO-DP",
-    "moyenne": 12.9276,
-    "ecart-type": 2.77703
-  },
-  {
-    "annee": 2025,
     "champ": "ARTS",
-    "moyenne": 14.5084,
-    "ecart-type": 1.96141
+    "moyenne": 114.555,
+    "ecart-type": 1.96117
   },
   {
     "annee": 2025,
     "champ": "EPS",
-    "moyenne": 14.5643,
-    "ecart-type": 1.93461
+    "moyenne": 14.6405,
+    "ecart-type": 1.89741
+  },
+  {
+    "annee": 2025,
+    "champ": "FRANCAIS",
+    "moyenne": 12.3602,
+    "ecart-type": 3.22447
+  },
+  {
+    "annee": 2025,
+    "champ": "HISTOIRE-GEO",
+    "moyenne": 112.5205,
+    "ecart-type": 3.26879
+  },
+  {
+    "annee": 2025,
+    "champ": "LANGUES VIVANTES",
+    "moyenne": 13.0202,
+    "ecart-type": 3.22343
+  },
+  {
+    "annee": 2025,
+    "champ": "MATHEMATIQUES",
+    "moyenne": 11.7792,
+    "ecart-type": 4.0464
+  },
+  {
+    "annee": 2025,
+    "champ": "SCIENCES-TECHNO-DP",
+    "moyenne": 12.9213,
+    "ecart-type": 2.80492
   }
 ]
