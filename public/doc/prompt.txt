@@ -1,114 +1,245 @@
 Je veux que tu saches calculer le score du bilan périodique Affelnet à partir des bulletins en attachement (parfois 3 si le college fonctionne en trimestre, parfois 2 si il fonctionne en semestre).
 
-Les matières à prendre en compte sont uniquement celles-ci: Français, Mathématiques, Histoire-Géo,  LV1, LV2, EPS, Arts Plastiques, Education Musicale, SVT, Technologie, Physique-Chimie.
+
+
+Les matières à prendre en compte sont uniquement celles-ci: Français, Mathématiques, Histoire-Géo,  LV1, LV2, EPS, Arts Plastiques, Education Musicale, SVT, Technologie, Physique-Chimie et EMC
+
+
+
+Si il manque la note de EMC, tu prends celle de Histoire-Géo.
+
+
 
 Pour chaque matière la note à prendre en compte se trouve dans la colonne avec en-tête "Eleve"
 
+
+
 On part des 3 moyennes trimestrielles (ou des 2 pour les collèges qui fonctionnent en semestres) de chacune des 11 matières et on applique les 4 traitements successifs suivants:
 
+
+
 Etape 0 : simplement lister les notes trouvées dans les bulletins, dans l'ordre des matières indiqué précédemment.
+
 Étape 1 : « tranchage » des notes
+
+
 
 Chaque note est d’abord « tranchée » sur une échelle à 4 niveaux en une note sur 16:
 
+
+
 si moyenne < 5, on obtient alors 3 points
+
 si 5 ≤ moyenne < 10, on a alors 8 points
+
 si 10 ≤ moyenne < 15, on obtient alors 13 points
+
 si moyenne ≥ 15, on obtient alors 16 points
+
+
 
 On ne retient par la suite que la moyenne des trimestres “tranchés”.
 
+
+
 Par exemple, si j’ai 13, 14 et 15 en Mathématiques, alors Affelnet retiendra (13 + 13 + 16) / 3 = 14 pour cette matière.
+
 Il faut ensuite arrondir à la 2e décimale, par exemple 12,6666666 devient 12,67 (on arrondit, mais on ne tronque pas)
+
+
 
 Étape 2 : regroupement en “champs disciplinaires”
 
+
+
 On regroupe maintenant certaines matières, afin de ne se retrouver qu’avec 7 “champs disciplinaires”. Les Mathématiques, Français, Histoire-Géo et EPS restent quant à eux séparés et constituent chacun un champ disciplinaire à part entière. Concernant les 7 matières restantes, on effectue les 3 regroupements suivants:
 
+
+
 Arts = moyenne(Arts Plastiques, Education Musicale)
+
 EPS = EPS
+
 Français = Français
-Histoire-Géo  = Histoire-Géo
+
+Histoire-Géo  = moyenne(Histoire-Géo, EMC)
+
 Langues = moyenne(LV1, LV2)
+
 Mathématiques = Mathématiques
+
 Sciences = moyenne(Physique-Chimie, SVT, Technologie)
+
+
 
 Prenons l’exemple du champ disciplinaire Langues, sur 3 trimestres successifs j’ai eu:
 
+
+
 13, 14 et 13 en Anglais
+
 14, 14 et 17 en Espagnol
+
 Après le “tranchage” de l’étape 1, ces notes deviennent:
 
+
+
 13, 13 et 13 donc 13 de moyenne pour l’Anglais
+
 13, 13 et 16 donc 14 de moyenne en Espagnol
+
 Ma note retenue pour le champ disciplinaire “Langues” constitué de ces 2 matières sera donc ( 13 + 14) / 2 = 13,5
+
+
 
 Il faut ensuite arrondir à la 2e décimale, par exemple 12,6666666 devient 12,67 (on arrondit, mais on ne tronque pas)
 
+
+
 Étape 3: harmonisation sur l’Académie
+
+
 
 On va maintenant harmoniser la note de chaque champ disciplinaire sur l’Académie.
 
+
+
 Affelnet va en premier lieu calculer la moyenne µ et l’écart-type σ des notes intermédiaires issues de l’étape 2 de chacun des 7 champs disciplinaires pour tous les élèves de l’académie.
+
+
 
 Si on appelle T la variable représentant la note intermédiaire d’un élève relative à un champ disciplinaire donné, Affelnet va réaliser la « cuisine » statistique suivante sur cette variable, il va:
 
+
+
 - Centrer T pour avoir une moyenne nulle en lui soustrayant la moyenne académique µ
+
 - Réduire la variable centrée obtenue en divisant par l’écart-type académique σ afin que tous les champs disciplinaires aient la même dispersion (à savoir un écart-type de 1)
+
 - Translater enfin cette variable centrée réduite pour avoir une moyenne de 10 (en ajoutant simplement 10)
+
 - Multiplier par 10
+
+
 
 Mise en équation, la nouvelle note harmonisée H s’écrit donc comme suit : H = 10 x [10 + (T-µ)/σ]
 
+
+
 Voici les données statistiques à prendre en compte :
 
-{
-"annee": 2024,
-"champ": "MATHEMATIQUES",
-"moyenne": 11.8347,
-"ecart-type": 3.9546
-},
-{
-"annee": 2024,
-"champ": "FRANCAIS",
-"moyenne": 12.3031,
-"ecart-type": 3.23789
-},
-{
-"annee": 2024,
-"champ": "HISTOIRE-GEO",
-"moyenne": 12.5116,
-"ecart-type": 3.18119
-},
-{
-"annee": 2024,
-"champ": "LANGUES VIVANTES",
-"moyenne": 13.1441,
-"ecart-type": 2.99242
-},
-{
-"annee": 2024,
-"champ": "SCIENCES-TECHNO-DP",
-"moyenne": 12.9276,
-"ecart-type": 2.77703
-},
-{
-"annee": 2024,
-"champ": "ARTS",
-"moyenne": 14.5084,
-"ecart-type": 1.96141
-},
-{
-"annee": 2024,
-"champ": "EPS",
-"moyenne": 14.5643,
-"ecart-type": 1.93461
-}
+
+
+[
+
+  {
+
+    "annee": 2025,
+
+    "champ": "ARTS",
+
+    "moyenne": 14.555,
+
+    "ecart-type": 1.96117
+
+  },
+
+  {
+
+    "annee": 2025,
+
+    "champ": "EPS",
+
+    "moyenne": 14.6405,
+
+    "ecart-type": 1.89741
+
+  },
+
+  {
+
+    "annee": 2025,
+
+    "champ": "FRANCAIS",
+
+    "moyenne": 12.3602,
+
+    "ecart-type": 3.22447
+
+  },
+
+  {
+
+    "annee": 2025,
+
+    "champ": "HISTOIRE-GEO",
+
+    "moyenne": 12.5201,
+
+    "ecart-type": 3.26777
+
+  },
+
+  {
+
+    "annee": 2025,
+
+    "champ": "LANGUES VIVANTES",
+
+    "moyenne": 13.0314,
+
+    "ecart-type": 3.17393
+
+  },
+
+  {
+
+    "annee": 2025,
+
+    "champ": "MATHEMATIQUES",
+
+    "moyenne": 11.7792,
+
+    "ecart-type": 4.0464
+
+  },
+
+  {
+
+    "annee": 2025,
+
+    "champ": "SCIENCES-TECHNO-DP",
+
+    "moyenne": 12.9213,
+
+    "ecart-type": 2.80492
+
+  }
+
+]
+
+
+
+
 
 On arrondit le résultat à 3 décimales (on ne tronque pas !) : par exemple 102,946666 devient 102,947 (et non pas 102,946)
 
+
+
 Étape 4 : pondération des champs disciplinaires
+
+
 
 Fort de nos 7 notes “harmonisées”, on applique pour terminer des pondérations différentes selon le champ disciplinaire (5 pour les Mathématiques et le Français, 4 pour les autres).
 
+
+
 Le score total pour le bilan périodique est la somme de ces 7 valeurs pondérées, arrondie à 3 décimales.
+
+
+
+Attention : applique-toi bien sur l'addition car tu as tendance à te tromper un peu trop souvent. Donc concentres-toi bien sur l'addition finale !
+
+
+
+Présente moi en particulier un tableau avec les notes brutes et arrondies pour les 7 champs disciplinaires.
