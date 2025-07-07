@@ -47,6 +47,8 @@ build/Release
 # Dependency directories
 node_modules/
 
+old/
+
 # Optional npm cache directory
 .npm
 
@@ -70,4 +72,3 @@ node_modules/
 dataconnect
 
 .firebaserc
-
