@@ -1,147 +1,1660 @@
+Affelnet Paris désigne la procédure d’affectation des collégiens aux lycées publics de Paris qui se déroule chaque année fin juin.
+Il y a en réalité 2 procédures différentes : une pour accéder en classe de Seconde Générale et Technologique (2nde GT) et une autre différente pour accéder aux lycées Professionnels.
+Je vais te décrire ici uniquement la procédure pour accéder à une Seconde GT dans un lycée public de Paris.
+Au mois de mai, le collégien fait une liste hiérarchisée de vœux de lycées proposant une 2nde GT.
+Il peut aussi demander des lycées à recrutement particulier, si c’est le cas, il doit les placer en premiers vœux.
+Ces vœux de recrutement particulier sont examinés par une commission à part.
+Si un des vœux de recrutement particulier est accepté, on en reste là et collégien est affecté dans ce lycée.
+Par exemple les lycées d’excellence Henri IV et Louis Le Grand sont des vœux de recrutement particulier.
+Pour le reste des lycées, la liste des vœux est traitée automatiquement dans un algorithme d’appariement (Gale & Shapley, deferred acceptance).
+Sauf que côté lycée, il n’y a pas de liste de préférence comme le prévoit l’algo de deferred acceptance.
+Cette liste de préférence est générée automatiquement par un autre algo de scoring.
+Je vais t’expliquer comment est valorisé un vœu.
+Un lycée préférera un collégien à un autre simplement si son score sur ce vœu est supérieur.
+Il n’est donc pas nécessaire de consulter les lycées, qui donc n’interviennent pas du tout dans la procédure.
+Le score d’un vœu est la somme des 3 éléments suivants :
+1) Un bonus géographique lié à la fois au collège de secteur du collégien et au lycée demandé par ce voeu
+2) Un bonus IPS (Indice de Position Sociale) lié au collège de scolarisation du collégien
+3) Un bonus boursier de 600 point si le collégien est boursier. Sans précision, il n'est pas considéré comme boursier et donc n'a pas de bonus boursier
+4) Un score de résultats scolaires du collégien
+1) Le bonus géographique :
+A chaque élève de Troisième est associé un collège de secteur, déduit de son adresse principale déclarée dans Affelnet avant le mois d’avril. Parfois, l’élève n’est pas scolarisé dans ce collège là, mais dans un autre, qu’on appelle collège de scolarisation. En général le collège de scolarisation est le même que le collège de secteur, mais pas toujours.
+Pour connaître le collège de secteur, il faut indiquer au collégien de saisir son adresse sur le site de carte scolaire de Paris, en activant le commutateur « Collège » et l’année la plus avancée : [https://experience.arcgis.com/experience/5b6803bc7f634620a85da29dd8a113fe](https://experience.arcgis.com/experience/5b6803bc7f634620a85da29dd8a113fe)
+De la connaissance du collège de secteur va être déduit 5 lycées de secteur 1.
+Voici l’association pour cette année 2025, qui contient également le bonus IPS que j'explique un peu plus loin.
+
+[
+  {
+    "id_college": "0755433Y",
+    "nom_college": "AIME CESAIRE",
+    "lycees_secteur1": [
+      "CHAPTAL",
+      "COLBERT",
+      "CONDORCET",
+      "JACQUES DECOUR",
+      "JULES FERRY"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0750607C",
+    "nom_college": "ALAIN FOURNIER",
+    "lycees_secteur1": [
+      "DORIAN",
+      "SIMONE WEIL",
+      "SOPHIE GERMAIN",
+      "TURGOT",
+      "VOLTAIRE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0750445B",
+    "nom_college": "ALBERTO GIACOMETTI",
+    "lycees_secteur1": [
+      "BUFFON",
+      "CAMILLE SEE",
+      "EMILE DUBOIS",
+      "MONTAIGNE",
+      "VICTOR DURUY"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0751705W",
+    "nom_college": "ALPHONSE DAUDET",
+    "lycees_secteur1": [
+      "EMILE DUBOIS",
+      "LAVOISIER",
+      "MONTAIGNE",
+      "PAUL BERT",
+      "VICTOR DURUY"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0754305X",
+    "nom_college": "ANDRE CITROEN",
+    "lycees_secteur1": [
+      "BUFFON",
+      "CAMILLE SEE",
+      "JEAN DE LA FONTAINE",
+      "JEAN-BAPTISTE SAY",
+      "MOLIERE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752387M",
+    "nom_college": "ANDRE MALRAUX",
+    "lycees_secteur1": [
+      "CARNOT",
+      "CONDORCET",
+      "EDGAR QUINET",
+      "JANSON DE SAILLY",
+      "LAMARTINE"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0750608D",
+    "nom_college": "ANNE FRANK",
+    "lycees_secteur1": [
+      "ARAGO",
+      "DORIAN",
+      "HELENE BOUCHER",
+      "SIMONE WEIL",
+      "VICTOR HUGO"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752319N",
+    "nom_college": "ANTOINE COYSEVOX",
+    "lycees_secteur1": [
+      "CONDORCET",
+      "HONORE DE BALZAC",
+      "JULES FERRY",
+      "RABELAIS",
+      "RACINE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0750362L",
+    "nom_college": "BEAUMARCHAIS",
+    "lycees_secteur1": [
+      "ARAGO",
+      "CHARLEMAGNE",
+      "COLBERT",
+      "SOPHIE GERMAIN",
+      "VOLTAIRE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752829T",
+    "nom_college": "BERNARD PALISSY",
+    "lycees_secteur1": [
+      "EDGAR QUINET",
+      "FENELON",
+      "LAMARTINE",
+      "LAVOISIER",
+      "TURGOT"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752958H",
+    "nom_college": "BORIS VIAN",
+    "lycees_secteur1": [
+      "CARNOT",
+      "CHAPTAL",
+      "HONORE DE BALZAC",
+      "JANSON DE SAILLY",
+      "RABELAIS"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752545J",
+    "nom_college": "BUFFON",
+    "lycees_secteur1": [
+      "BUFFON",
+      "CAMILLE SEE",
+      "PAUL BERT",
+      "RODIN",
+      "VICTOR DURUY"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752694W",
+    "nom_college": "CAMILLE CLAUDEL",
+    "lycees_secteur1": [
+      "CLAUDE MONET",
+      "GABRIEL FAURE",
+      "LAVOISIER",
+      "PAUL VALERY",
+      "RODIN"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752546K",
+    "nom_college": "CAMILLE SEE",
+    "lycees_secteur1": [
+      "BUFFON",
+      "CAMILLE SEE",
+      "CLAUDE BERNARD",
+      "JEAN-BAPTISTE SAY",
+      "MOLIERE"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752552S",
+    "nom_college": "CARNOT",
+    "lycees_secteur1": [
+      "CARNOT",
+      "CHAPTAL",
+      "EDGAR QUINET",
+      "HONORE DE BALZAC",
+      "JANSON DE SAILLY"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752248L",
+    "nom_college": "CESAR FRANCK",
+    "lycees_secteur1": [
+      "CHARLEMAGNE",
+      "SIMONE WEIL",
+      "TURGOT",
+      "VICTOR HUGO",
+      "VOLTAIRE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752529S",
+    "nom_college": "CHAPTAL",
+    "lycees_secteur1": [
+      "CARNOT",
+      "CHAPTAL",
+      "EDGAR QUINET",
+      "JACQUES DECOUR",
+      "JANSON DE SAILLY"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752525M",
+    "nom_college": "CHARLEMAGNE",
+    "lycees_secteur1": [
+      "CHARLEMAGNE",
+      "SIMONE WEIL",
+      "SOPHIE GERMAIN",
+      "VICTOR HUGO",
+      "VOLTAIRE"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0751706X",
+    "nom_college": "CHARLES PEGUY",
+    "lycees_secteur1": [
+      "DIDEROT",
+      "HELENE BOUCHER",
+      "HENRI BERGSON",
+      "LAMARTINE",
+      "SOPHIE GERMAIN"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752547L",
+    "nom_college": "CLAUDE BERNARD",
+    "lycees_secteur1": [
+      "CLAUDE BERNARD",
+      "JANSON DE SAILLY",
+      "JEAN DE LA FONTAINE",
+      "JEAN-BAPTISTE SAY",
+      "MOLIERE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0750360J",
+    "nom_college": "CLAUDE CHAPPE",
+    "lycees_secteur1": [
+      "COLBERT",
+      "DIDEROT",
+      "HENRI BERGSON",
+      "SOPHIE GERMAIN",
+      "TURGOT"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752317L",
+    "nom_college": "CLAUDE DEBUSSY",
+    "lycees_secteur1": [
+      "BUFFON",
+      "CAMILLE SEE",
+      "CLAUDE BERNARD",
+      "MOLIERE",
+      "VICTOR DURUY"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752539C",
+    "nom_college": "CLAUDE MONET",
+    "lycees_secteur1": [
+      "CLAUDE MONET",
+      "GABRIEL FAURE",
+      "PAUL BERT",
+      "RODIN",
+      "SOPHIE GERMAIN"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0755241P",
+    "nom_college": "COLETTE BESSON",
+    "lycees_secteur1": [
+      "CHARLEMAGNE",
+      "COLBERT",
+      "HELENE BOUCHER",
+      "VICTOR HUGO",
+      "VOLTAIRE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0751791P",
+    "nom_college": "CONDORCET",
+    "lycees_secteur1": [
+      "CHAPTAL",
+      "COLBERT",
+      "CONDORCET",
+      "EDGAR QUINET",
+      "RACINE"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0755030K",
+    "nom_college": "DANIEL MAYER",
+    "lycees_secteur1": [
+      "COLBERT",
+      "CONDORCET",
+      "JACQUES DECOUR",
+      "JULES FERRY",
+      "LAMARTINE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0751563S",
+    "nom_college": "DE STAEL",
+    "lycees_secteur1": [
+      "BUFFON",
+      "CAMILLE SEE",
+      "JANSON DE SAILLY",
+      "RODIN",
+      "VICTOR DURUY"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0755095F",
+    "nom_college": "EDGAR VARESE",
+    "lycees_secteur1": [
+      "COLBERT",
+      "DIDEROT",
+      "FENELON",
+      "LAMARTINE",
+      "TURGOT"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0753345D",
+    "nom_college": "EDMOND MICHELET",
+    "lycees_secteur1": [
+      "COLBERT",
+      "CONDORCET",
+      "HENRI BERGSON",
+      "LAMARTINE",
+      "RACINE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0751707Y",
+    "nom_college": "EDOUARD PAILLERON",
+    "lycees_secteur1": [
+      "CHAPTAL",
+      "COLBERT",
+      "DIDEROT",
+      "HENRI BERGSON",
+      "TURGOT"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752385K",
+    "nom_college": "ELSA TRIOLET",
+    "lycees_secteur1": [
+      "BUFFON",
+      "CLAUDE MONET",
+      "GABRIEL FAURE",
+      "LAVOISIER",
+      "MONTAIGNE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0753937X",
+    "nom_college": "EVARISTE GALOIS",
+    "lycees_secteur1": [
+      "CHARLEMAGNE",
+      "CLAUDE MONET",
+      "EMILE DUBOIS",
+      "GABRIEL FAURE",
+      "RODIN"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0753046D",
+    "nom_college": "FLORA TRISTAN",
+    "lycees_secteur1": [
+      "ARAGO",
+      "DIDEROT",
+      "HELENE BOUCHER",
+      "MAURICE RAVEL",
+      "VOLTAIRE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752693V",
+    "nom_college": "FRANCOIS COUPERIN",
+    "lycees_secteur1": [
+      "CHARLEMAGNE",
+      "LAVOISIER",
+      "SIMONE WEIL",
+      "SOPHIE GERMAIN",
+      "VOLTAIRE"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752544H",
+    "nom_college": "FRANCOIS VILLON",
+    "lycees_secteur1": [
+      "BUFFON",
+      "CAMILLE SEE",
+      "EMILE DUBOIS",
+      "PAUL BERT",
+      "VICTOR DURUY"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0750552T",
+    "nom_college": "FRANCOISE DOLTO",
+    "lycees_secteur1": [
+      "HELENE BOUCHER",
+      "HENRI BERGSON",
+      "SIMONE WEIL",
+      "SOPHIE GERMAIN",
+      "VOLTAIRE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0755778Y",
+    "nom_college": "FRANCOISE SELIGMANN",
+    "lycees_secteur1": [
+      "COLBERT",
+      "HENRI BERGSON",
+      "JULES FERRY",
+      "TURGOT",
+      "VOLTAIRE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752540D",
+    "nom_college": "GABRIEL FAURE",
+    "lycees_secteur1": [
+      "CHARLEMAGNE",
+      "CLAUDE MONET",
+      "GABRIEL FAURE",
+      "PAUL VALERY",
+      "RODIN"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752316K",
+    "nom_college": "GEORGE SAND",
+    "lycees_secteur1": [
+      "BUFFON",
+      "CLAUDE MONET",
+      "GABRIEL FAURE",
+      "PAUL BERT",
+      "RODIN"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752957G",
+    "nom_college": "GEORGES BRAQUE",
+    "lycees_secteur1": [
+      "CLAUDE MONET",
+      "EMILE DUBOIS",
+      "GABRIEL FAURE",
+      "LAVOISIER",
+      "RODIN"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0750507U",
+    "nom_college": "GEORGES BRASSENS",
+    "lycees_secteur1": [
+      "DIDEROT",
+      "FENELON",
+      "HENRI BERGSON",
+      "LAMARTINE",
+      "TURGOT"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0750546L",
+    "nom_college": "GEORGES CLEMENCEAU",
+    "lycees_secteur1": [
+      "CHAPTAL",
+      "JACQUES DECOUR",
+      "JULES FERRY",
+      "LAMARTINE",
+      "RABELAIS"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0750444A",
+    "nom_college": "GEORGES COURTELINE",
+    "lycees_secteur1": [
+      "CHARLEMAGNE",
+      "DORIAN",
+      "HELENE BOUCHER",
+      "MAURICE RAVEL",
+      "PAUL VALERY"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752192A",
+    "nom_college": "GEORGES DUHAMEL",
+    "lycees_secteur1": [
+      "BUFFON",
+      "CAMILLE SEE",
+      "PAUL BERT",
+      "RODIN",
+      "VICTOR DURUY"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752606A",
+    "nom_college": "GEORGES MELIES",
+    "lycees_secteur1": [
+      "COLBERT",
+      "HENRI BERGSON",
+      "JACQUES DECOUR",
+      "JULES FERRY",
+      "LAMARTINE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0753938Y",
+    "nom_college": "GEORGES ROUAULT",
+    "lycees_secteur1": [
+      "COLBERT",
+      "DIDEROT",
+      "HELENE BOUCHER",
+      "HENRI BERGSON",
+      "MAURICE RAVEL"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752195D",
+    "nom_college": "GERARD PHILIPE",
+    "lycees_secteur1": [
+      "CONDORCET",
+      "JACQUES DECOUR",
+      "LAMARTINE",
+      "RABELAIS",
+      "RACINE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0753936W",
+    "nom_college": "GERMAINE TILLION",
+    "lycees_secteur1": [
+      "DORIAN",
+      "HELENE BOUCHER",
+      "MAURICE RAVEL",
+      "PAUL VALERY",
+      "SOPHIE GERMAIN"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752190Y",
+    "nom_college": "GUILLAUME APOLLINAIRE",
+    "lycees_secteur1": [
+      "BUFFON",
+      "JANSON DE SAILLY",
+      "JEAN DE LA FONTAINE",
+      "JEAN-BAPTISTE SAY",
+      "VICTOR DURUY"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752695X",
+    "nom_college": "GUILLAUME BUDE",
+    "lycees_secteur1": [
+      "COLBERT",
+      "DIDEROT",
+      "HENRI BERGSON",
+      "SOPHIE GERMAIN",
+      "TURGOT"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0753518S",
+    "nom_college": "GUSTAVE FLAUBERT",
+    "lycees_secteur1": [
+      "CLAUDE MONET",
+      "GABRIEL FAURE",
+      "PAUL VALERY",
+      "RODIN",
+      "SOPHIE GERMAIN"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752189X",
+    "nom_college": "GUY FLAVIEN",
+    "lycees_secteur1": [
+      "ARAGO",
+      "DORIAN",
+      "HELENE BOUCHER",
+      "MAURICE RAVEL",
+      "PAUL VALERY"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752252R",
+    "nom_college": "HECTOR BERLIOZ",
+    "lycees_secteur1": [
+      "CONDORCET",
+      "HONORE DE BALZAC",
+      "JULES FERRY",
+      "RABELAIS",
+      "RACINE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752556W",
+    "nom_college": "HELENE BOUCHER",
+    "lycees_secteur1": [
+      "ARAGO",
+      "DORIAN",
+      "HELENE BOUCHER",
+      "PAUL VALERY",
+      "VICTOR HUGO"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752555V",
+    "nom_college": "HENRI BERGSON",
+    "lycees_secteur1": [
+      "CHAPTAL",
+      "COLBERT",
+      "DIDEROT",
+      "HENRI BERGSON",
+      "TURGOT"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752526N",
+    "nom_college": "HENRI IV",
+    "lycees_secteur1": [
+      "CHARLEMAGNE",
+      "FENELON",
+      "LAVOISIER",
+      "PAUL BERT",
+      "RODIN"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0750591K",
+    "nom_college": "HENRI MATISSE",
+    "lycees_secteur1": [
+      "ARAGO",
+      "DORIAN",
+      "HELENE BOUCHER",
+      "MAURICE RAVEL",
+      "PAUL VALERY"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752553T",
+    "nom_college": "HONORE DE BALZAC",
+    "lycees_secteur1": [
+      "HONORE DE BALZAC",
+      "JANSON DE SAILLY",
+      "JULES FERRY",
+      "RABELAIS",
+      "RACINE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752532V",
+    "nom_college": "JACQUES DECOUR",
+    "lycees_secteur1": [
+      "CARNOT",
+      "CHAPTAL",
+      "EDGAR QUINET",
+      "JACQUES DECOUR",
+      "JULES FERRY"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752187V",
+    "nom_college": "JACQUES PREVERT",
+    "lycees_secteur1": [
+      "CAMILLE SEE",
+      "FENELON",
+      "MONTAIGNE",
+      "PAUL BERT",
+      "VICTOR DURUY"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752548M",
+    "nom_college": "JANSON DE SAILLY",
+    "lycees_secteur1": [
+      "CLAUDE BERNARD",
+      "JANSON DE SAILLY",
+      "JEAN DE LA FONTAINE",
+      "JEAN-BAPTISTE SAY",
+      "MOLIERE"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752550P",
+    "nom_college": "JEAN DE LA FONTAINE",
+    "lycees_secteur1": [
+      "CLAUDE BERNARD",
+      "JANSON DE SAILLY",
+      "JEAN DE LA FONTAINE",
+      "JEAN-BAPTISTE SAY",
+      "MOLIERE"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0750611G",
+    "nom_college": "JEAN MOULIN",
+    "lycees_secteur1": [
+      "EMILE DUBOIS",
+      "LAVOISIER",
+      "MONTAIGNE",
+      "PAUL BERT",
+      "VICTOR DURUY"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0753939Z",
+    "nom_college": "JEAN PERRIN",
+    "lycees_secteur1": [
+      "ARAGO",
+      "DORIAN",
+      "HELENE BOUCHER",
+      "MAURICE RAVEL",
+      "PAUL VALERY"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0750478M",
+    "nom_college": "JEAN-BAPTISTE CLEMENT",
+    "lycees_secteur1": [
+      "COLBERT",
+      "HELENE BOUCHER",
+      "MAURICE RAVEL",
+      "TURGOT",
+      "VOLTAIRE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0751703U",
+    "nom_college": "JEAN-BAPTISTE POQUELIN",
+    "lycees_secteur1": [
+      "CHARLEMAGNE",
+      "COLBERT",
+      "JACQUES DECOUR",
+      "LAMARTINE",
+      "SOPHIE GERMAIN"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752549N",
+    "nom_college": "JEAN-BAPTISTE SAY",
+    "lycees_secteur1": [
+      "CLAUDE BERNARD",
+      "JANSON DE SAILLY",
+      "JEAN DE LA FONTAINE",
+      "JEAN-BAPTISTE SAY",
+      "MOLIERE"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752542F",
+    "nom_college": "JEAN-FRANCOIS OEBEN",
+    "lycees_secteur1": [
+      "ARAGO",
+      "MAURICE RAVEL",
+      "PAUL VALERY",
+      "SIMONE WEIL",
+      "VICTOR HUGO"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752533W",
+    "nom_college": "JULES FERRY",
+    "lycees_secteur1": [
+      "CHAPTAL",
+      "CONDORCET",
+      "JACQUES DECOUR",
+      "JULES FERRY",
+      "RABELAIS"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752249M",
+    "nom_college": "JULES ROMAINS",
+    "lycees_secteur1": [
+      "BUFFON",
+      "CAMILLE SEE",
+      "MOLIERE",
+      "PAUL BERT",
+      "VICTOR DURUY"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0750610F",
+    "nom_college": "JULES VERNE",
+    "lycees_secteur1": [
+      "ARAGO",
+      "DORIAN",
+      "MAURICE RAVEL",
+      "PAUL VALERY",
+      "VICTOR HUGO"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0753047E",
+    "nom_college": "LA GRANGE AUX BELLES",
+    "lycees_secteur1": [
+      "CHAPTAL",
+      "COLBERT",
+      "FENELON",
+      "LAMARTINE",
+      "VOLTAIRE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0755779Z",
+    "nom_college": "LA ROSE BLANCHE",
+    "lycees_secteur1": [
+      "CARNOT",
+      "CONDORCET",
+      "EDGAR QUINET",
+      "HONORE DE BALZAC",
+      "RACINE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752534X",
+    "nom_college": "LAMARTINE",
+    "lycees_secteur1": [
+      "COLBERT",
+      "CONDORCET",
+      "JACQUES DECOUR",
+      "LAMARTINE",
+      "RACINE"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752531U",
+    "nom_college": "LAVOISIER",
+    "lycees_secteur1": [
+      "FENELON",
+      "LAVOISIER",
+      "MONTAIGNE",
+      "PAUL BERT",
+      "RODIN"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752696Y",
+    "nom_college": "LEON GAMBETTA",
+    "lycees_secteur1": [
+      "HELENE BOUCHER",
+      "HENRI BERGSON",
+      "MAURICE RAVEL",
+      "TURGOT",
+      "VOLTAIRE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752251P",
+    "nom_college": "LOUISE MICHEL",
+    "lycees_secteur1": [
+      "COLBERT",
+      "DIDEROT",
+      "JACQUES DECOUR",
+      "LAMARTINE",
+      "VICTOR HUGO"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0750465Y",
+    "nom_college": "LUCIE ET RAYMOND AUBRAC",
+    "lycees_secteur1": [
+      "CHARLEMAGNE",
+      "COLBERT",
+      "HENRI BERGSON",
+      "VICTOR HUGO",
+      "VOLTAIRE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0750550R",
+    "nom_college": "LUCIE FAURE",
+    "lycees_secteur1": [
+      "ARAGO",
+      "DORIAN",
+      "HELENE BOUCHER",
+      "MAURICE RAVEL",
+      "PAUL VALERY"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0754706H",
+    "nom_college": "MARIE CURIE",
+    "lycees_secteur1": [
+      "CONDORCET",
+      "JACQUES DECOUR",
+      "LAMARTINE",
+      "RABELAIS",
+      "RACINE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752196E",
+    "nom_college": "MARX DORMOY",
+    "lycees_secteur1": [
+      "CHAPTAL",
+      "COLBERT",
+      "EDGAR QUINET",
+      "JACQUES DECOUR",
+      "RACINE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752557X",
+    "nom_college": "MAURICE RAVEL",
+    "lycees_secteur1": [
+      "ARAGO",
+      "DORIAN",
+      "MAURICE RAVEL",
+      "PAUL VALERY",
+      "SOPHIE GERMAIN"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0751793S",
+    "nom_college": "MAURICE UTRILLO",
+    "lycees_secteur1": [
+      "CARNOT",
+      "HONORE DE BALZAC",
+      "JACQUES DECOUR",
+      "LAMARTINE",
+      "RABELAIS"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752318M",
+    "nom_college": "MODIGLIANI",
+    "lycees_secteur1": [
+      "BUFFON",
+      "CAMILLE SEE",
+      "EMILE DUBOIS",
+      "JEAN-BAPTISTE SAY",
+      "VICTOR DURUY"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752551R",
+    "nom_college": "MOLIERE",
+    "lycees_secteur1": [
+      "CLAUDE BERNARD",
+      "JANSON DE SAILLY",
+      "JEAN DE LA FONTAINE",
+      "JEAN-BAPTISTE SAY",
+      "MOLIERE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752527P",
+    "nom_college": "MONTAIGNE",
+    "lycees_secteur1": [
+      "CAMILLE SEE",
+      "FENELON",
+      "LAVOISIER",
+      "MONTAIGNE",
+      "PAUL BERT"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752523K",
+    "nom_college": "MONTGOLFIER",
+    "lycees_secteur1": [
+      "LAVOISIER",
+      "SIMONE WEIL",
+      "SOPHIE GERMAIN",
+      "TURGOT",
+      "VOLTAIRE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0750525N",
+    "nom_college": "MOULIN DES PRES",
+    "lycees_secteur1": [
+      "BUFFON",
+      "CLAUDE MONET",
+      "GABRIEL FAURE",
+      "PAUL BERT",
+      "RODIN"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752530T",
+    "nom_college": "OCTAVE GREARD",
+    "lycees_secteur1": [
+      "CARNOT",
+      "CHAPTAL",
+      "EDGAR QUINET",
+      "JACQUES DECOUR",
+      "RACINE"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752543G",
+    "nom_college": "PAUL BERT",
+    "lycees_secteur1": [
+      "EMILE DUBOIS",
+      "LAVOISIER",
+      "MONTAIGNE",
+      "PAUL BERT",
+      "RODIN"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752250N",
+    "nom_college": "PAUL GAUGUIN",
+    "lycees_secteur1": [
+      "CARNOT",
+      "EDGAR QUINET",
+      "JACQUES DECOUR",
+      "LAMARTINE",
+      "RACINE"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752537A",
+    "nom_college": "PAUL VALERY",
+    "lycees_secteur1": [
+      "DORIAN",
+      "HELENE BOUCHER",
+      "MAURICE RAVEL",
+      "PAUL VALERY",
+      "VICTOR HUGO"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0750609E",
+    "nom_college": "PAUL VERLAINE",
+    "lycees_secteur1": [
+      "ARAGO",
+      "DORIAN",
+      "MAURICE RAVEL",
+      "SOPHIE GERMAIN",
+      "VICTOR HUGO"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0751790N",
+    "nom_college": "PIERRE ALVISET",
+    "lycees_secteur1": [
+      "CHARLEMAGNE",
+      "EMILE DUBOIS",
+      "MONTAIGNE",
+      "RODIN",
+      "SOPHIE GERMAIN"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752107H",
+    "nom_college": "PIERRE DE RONSARD",
+    "lycees_secteur1": [
+      "CARNOT",
+      "CHAPTAL",
+      "EDGAR QUINET",
+      "HONORE DE BALZAC",
+      "JACQUES DECOUR"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752198G",
+    "nom_college": "PIERRE MENDES FRANCE",
+    "lycees_secteur1": [
+      "ARAGO",
+      "DIDEROT",
+      "HELENE BOUCHER",
+      "MAURICE RAVEL",
+      "VOLTAIRE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0750387N",
+    "nom_college": "PIERRE-JEAN DE BERANGER",
+    "lycees_secteur1": [
+      "ARAGO",
+      "CHARLEMAGNE",
+      "DIDEROT",
+      "SIMONE WEIL",
+      "VOLTAIRE"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0754528P",
+    "nom_college": "PILATRE DE ROZIER",
+    "lycees_secteur1": [
+      "ARAGO",
+      "HELENE BOUCHER",
+      "MAURICE RAVEL",
+      "PAUL VALERY",
+      "VOLTAIRE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752186U",
+    "nom_college": "RAYMOND QUENEAU",
+    "lycees_secteur1": [
+      "EMILE DUBOIS",
+      "LAVOISIER",
+      "MONTAIGNE",
+      "PAUL BERT",
+      "RODIN"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0754355B",
+    "nom_college": "ROBERT DOISNEAU",
+    "lycees_secteur1": [
+      "ARAGO",
+      "CHARLEMAGNE",
+      "DORIAN",
+      "TURGOT",
+      "VOLTAIRE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752538B",
+    "nom_college": "RODIN",
+    "lycees_secteur1": [
+      "CLAUDE MONET",
+      "GABRIEL FAURE",
+      "LAVOISIER",
+      "PAUL BERT",
+      "RODIN"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0750429J",
+    "nom_college": "ROLAND DORGELES",
+    "lycees_secteur1": [
+      "CHAPTAL",
+      "JACQUES DECOUR",
+      "JULES FERRY",
+      "LAMARTINE",
+      "RABELAIS"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0754253R",
+    "nom_college": "SAINT-EXUPERY",
+    "lycees_secteur1": [
+      "EMILE DUBOIS",
+      "LAVOISIER",
+      "MONTAIGNE",
+      "PAUL BERT",
+      "RODIN"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0750575T",
+    "nom_college": "SONIA DELAUNAY",
+    "lycees_secteur1": [
+      "CHAPTAL",
+      "COLBERT",
+      "FENELON",
+      "HENRI BERGSON",
+      "LAMARTINE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752554U",
+    "nom_college": "STEPHANE MALLARME",
+    "lycees_secteur1": [
+      "CARNOT",
+      "HONORE DE BALZAC",
+      "JULES FERRY",
+      "RABELAIS",
+      "RACINE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0755747P",
+    "nom_college": "SUZANNE LACORE",
+    "lycees_secteur1": [
+      "COLBERT",
+      "CONDORCET",
+      "DIDEROT",
+      "HONORE DE BALZAC",
+      "LAMARTINE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0755000C",
+    "nom_college": "THOMAS MANN",
+    "lycees_secteur1": [
+      "ARAGO",
+      "CLAUDE MONET",
+      "FENELON",
+      "GABRIEL FAURE",
+      "PAUL VALERY"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0750584C",
+    "nom_college": "VALMY",
+    "lycees_secteur1": [
+      "COLBERT",
+      "FENELON",
+      "HENRI BERGSON",
+      "TURGOT",
+      "VOLTAIRE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0752528R",
+    "nom_college": "VICTOR DURUY",
+    "lycees_secteur1": [
+      "BUFFON",
+      "CAMILLE SEE",
+      "MONTAIGNE",
+      "PAUL BERT",
+      "VICTOR DURUY"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752524L",
+    "nom_college": "VICTOR HUGO",
+    "lycees_secteur1": [
+      "FENELON",
+      "SIMONE WEIL",
+      "SOPHIE GERMAIN",
+      "VICTOR HUGO",
+      "VOLTAIRE"
+    ],
+    "bonus": 0
+  },
+  {
+    "id_college": "0752536Z",
+    "nom_college": "VOLTAIRE",
+    "lycees_secteur1": [
+      "CHARLEMAGNE",
+      "COLBERT",
+      "DORIAN",
+      "TURGOT",
+      "VOLTAIRE"
+    ],
+    "bonus": 600
+  },
+  {
+    "id_college": "0750484U",
+    "nom_college": "W.A. MOZART",
+    "lycees_secteur1": [
+      "COLBERT",
+      "DIDEROT",
+      "HENRI BERGSON",
+      "JULES FERRY",
+      "LAMARTINE"
+    ],
+    "bonus": 1200
+  },
+  {
+    "id_college": "0752108J",
+    "nom_college": "YVONNE LE TAC",
+    "lycees_secteur1": [
+      "CARNOT",
+      "EDGAR QUINET",
+      "JACQUES DECOUR",
+      "JULES FERRY",
+      "RACINE"
+    ],
+    "bonus": 0
+  }
+]
+
+Lorsqu’un vœu de collégien concerne un de ses 5 lycées de secteur 1 ou le lycée PIERRE GILLES DE GENNES,
+alors ce vœu bénéficie d’un bonus géographique de 32640 points. Sinon par défaut, le bonus n’est que de 17760.
+2) Le bonus IPS
+A chaque collège est attribué un bonus IPS, le même pour tous les collégiens de ce collège. Il vaut 1200, 600 ou 0.
+Ce bonus est indiqué dans le champ « bonus » de la structure précédente qui liste les lycées de secteur 1 de chaque collège.
+3) le score de résulats scolaires
+Ce score est la somme du score de bilan périodique et du bilan fin de cycle (bilan du socle de compétences).
+a) score de bilan périodique
 Je veux que tu saches calculer le score du bilan périodique Affelnet Paris 2025 à partir des bulletins en attachement (parfois 3 si le college fonctionne en trimestre, parfois 2 si il fonctionne en semestre).
-
 Les matières à prendre en compte sont uniquement celles-ci: Français, Mathématiques, Histoire-Géo, LV1, LV2, EPS, Arts Plastiques, Education Musicale, SVT, Technologie, Physique-Chimie et EMC
-
 S'il manque la note de EMC dans les bulletins, tu prends celle de Histoire-Géo.
-
-Pour chaque matière la note à prendre en compte est celle de l'élève, pas de la classe.
-
-On part des 3 moyennes trimestrielles (ou des 2 pour les collèges qui fonctionnent en semestres) de chacune des 11 matières et on applique les 4 traitements successifs suivants:
-
+Pour chaque matière la note à prendre en compte est celle de l'élève, pas de la classe, donc choisis la bonne colonne.
+Parfois les 3 trimestres sont dans le même tableau, fais bien attention.
+On part des 3 moyennes trimestrielles (ou des 2 pour les collèges qui fonctionnent en semestres) de chacune des matières et on applique les 4 traitements successifs suivants:
 Etape 0 : simplement lister les notes trouvées dans les bulletins, dans l'ordre des matières indiqué précédemment.
-
 Étape 1 : « tranchage » des notes
-
 Chaque note est d’abord « tranchée » sur une échelle à 4 niveaux en une note sur 16:
-
 si moyenne < 5, on obtient alors 3 points
-
 si 5 ≤ moyenne < 10, on a alors 8 points
-
 si 10 ≤ moyenne < 15, on obtient alors 13 points
-
 si moyenne ≥ 15, on obtient alors 16 points
-
 On ne retient par la suite que la moyenne des trimestres “tranchés”.
-
 Par exemple, si j’ai 13, 14 et 15 en Mathématiques, alors Affelnet retiendra (13 + 13 + 16) / 3 = 14 pour cette matière.
-
 Il faut ensuite arrondir à la 2e décimale, par exemple 12,6666666 devient 12,67 (on arrondit, mais on ne tronque pas)
-
 Étape 2 : regroupement en “champs disciplinaires”
-
 On regroupe maintenant certaines matières, afin de ne se retrouver qu’avec 7 “champs disciplinaires”. Les Mathématiques, Français, Histoire-Géo et EPS restent quant à eux séparés et constituent chacun un champ disciplinaire à part entière. Concernant les 7 matières restantes, on effectue les 3 regroupements suivants:
-
-Arts = moyenne(Arts Plastiques, Education Musicale)
-
+ARTS = moyenne(Arts Plastiques, Education Musicale)
 EPS = EPS
-
-Français = Français
-
-Histoire-Géo = moyenne(Histoire-Géo, EMC)
-
-Langues = moyenne(LV1, LV2)
-
-Mathématiques = Mathématiques
-
-Sciences = moyenne(Physique-Chimie, SVT, Technologie)
-
+FRANCAIS = Français
+HSITOIRE-GEO = moyenne(Histoire-Géo, EMC)
+LANGUES VIVANTES = moyenne(LV1, LV2)
+MATHEMATIQUES = Mathématiques
+SCIENCES-TECHNO-DP = moyenne(Physique-Chimie, SVT, Technologie)
 Prenons l’exemple du champ disciplinaire Langues, sur 3 trimestres successifs j’ai eu:
-
 13, 14 et 13 en Anglais
-
 14, 14 et 17 en Espagnol
-
 Après le “tranchage” de l’étape 1, ces notes deviennent:
-
 13, 13 et 13 donc 13 de moyenne pour l’Anglais
-
 13, 13 et 16 donc 14 de moyenne en Espagnol
-
-Ma note retenue pour le champ disciplinaire “Langues” constitué de ces 2 matières sera donc ( 13 + 14) / 2 = 13,5
-
+Ma note retenue pour le champ disciplinaire LANGUES VIVANTES constitué de ces 2 matières sera donc ( 13 + 14) / 2 = 13,5
 Il faut ensuite arrondir à la 2e décimale, par exemple 12,6666666 devient 12,67 (on arrondit, mais on ne tronque pas)
-
 Tu me présenteras en particulier un tableau avec les notes brutes de chaque matière.
-
-
 Étape 3: harmonisation sur l’Académie
-
 On va maintenant harmoniser la note de chaque champ disciplinaire sur l’Académie.
-
 Affelnet va en premier lieu calculer la moyenne µ et l’écart-type σ des notes intermédiaires issues de l’étape 2 de chacun des 7 champs disciplinaires pour tous les élèves de l’académie.
-
 Si on appelle T la variable représentant la note intermédiaire d’un élève relative à un champ disciplinaire donné, Affelnet va réaliser la « cuisine » statistique suivante sur cette variable, il va:
-
 Centrer T pour avoir une moyenne nulle en lui soustrayant la moyenne académique µ
-
 Réduire la variable centrée obtenue en divisant par l’écart-type académique σ afin que tous les champs disciplinaires aient la même dispersion (à savoir un écart-type de 1)
-
 Translater enfin cette variable centrée réduite pour avoir une moyenne de 10 (en ajoutant simplement 10)
-
 Multiplier par 10
-
 Mise en équation, la nouvelle note harmonisée H s’écrit donc comme suit : H = 10 x [10 + (T-µ)/σ]
-
-Voici les données statistiques des champs disciplinaires à prendre en compte pour 2025 :
+Voici les données statistiques des champs disciplinaires à prendre en compte pour chaque année depuis 2021 :
 
 [
   {
-    "annee": 2025,
-    "champ": "ARTS",
-    "moyenne": 14.555,
-    "ecart-type": 1.96117
+    "annee": 2021,
+    "champ": "MATHEMATIQUES",
+    "moyenne": 11.985,
+    "ecart-type": 3.82599
   },
   {
-    "annee": 2025,
-    "champ": "EPS",
-    "moyenne": 14.6405,
-    "ecart-type": 1.89741
-  },
-  {
-    "annee": 2025,
+    "annee": 2021,
     "champ": "FRANCAIS",
-    "moyenne": 12.3602,
-    "ecart-type": 3.22447
+    "moyenne": 12.4471,
+    "ecart-type": 3.15391
   },
   {
-    "annee": 2025,
+    "annee": 2021,
     "champ": "HISTOIRE-GEO",
-    "moyenne": 12.60584,
-    "ecart-type": 3.17359568
+    "moyenne": 12.6679,
+    "ecart-type": 3.07472
   },
   {
-    "annee": 2025,
+    "annee": 2021,
     "champ": "LANGUES VIVANTES",
-    "moyenne": 13.0314,
-    "ecart-type": 3.17393
+    "moyenne": 13.1587,
+    "ecart-type": 2.97486
+  },
+  {
+    "annee": 2021,
+    "champ": "SCIENCES-TECHNO-DP",
+    "moyenne": 13.0277,
+    "ecart-type": 2.66932
+  },
+  {
+    "annee": 2021,
+    "champ": "ARTS",
+    "moyenne": 14.5134,
+    "ecart-type": 1.9015
+  },
+  {
+    "annee": 2021,
+    "champ": "EPS",
+    "moyenne": 14.6362,
+    "ecart-type": 1.83722
+  },
+  {
+    "annee": 2022,
+    "champ": "MATHEMATIQUES",
+    "moyenne": 11.8173,
+    "ecart-type": 3.92003
+  },
+  {
+    "annee": 2022,
+    "champ": "FRANCAIS",
+    "moyenne": 12.3577,
+    "ecart-type": 3.21612
+  },
+  {
+    "annee": 2022,
+    "champ": "HISTOIRE-GEO",
+    "moyenne": 12.4791,
+    "ecart-type": 3.15524
+  },
+  {
+    "annee": 2022,
+    "champ": "LANGUES VIVANTES",
+    "moyenne": 13.0677,
+    "ecart-type": 3.01341
+  },
+  {
+    "annee": 2022,
+    "champ": "SCIENCES-TECHNO-DP",
+    "moyenne": 12.9665,
+    "ecart-type": 2.7126
+  },
+  {
+    "annee": 2022,
+    "champ": "ARTS",
+    "moyenne": 14.5092,
+    "ecart-type": 1.88857
+  },
+  {
+    "annee": 2022,
+    "champ": "EPS",
+    "moyenne": 14.5791,
+    "ecart-type": 1.82615
+  },
+  {
+    "annee": 2023,
+    "champ": "MATHEMATIQUES",
+    "moyenne": 11.8414,
+    "ecart-type": 3.91543
+  },
+  {
+    "annee": 2023,
+    "champ": "FRANCAIS",
+    "moyenne": 12.3063,
+    "ecart-type": 3.19523
+  },
+  {
+    "annee": 2023,
+    "champ": "HISTOIRE-GEO",
+    "moyenne": 12.4761,
+    "ecart-type": 3.14861
+  },
+  {
+    "annee": 2023,
+    "champ": "LANGUES VIVANTES",
+    "moyenne": 13.0787,
+    "ecart-type": 3.02847
+  },
+  {
+    "annee": 2023,
+    "champ": "SCIENCES-TECHNO-DP",
+    "moyenne": 12.8975,
+    "ecart-type": 2.73373
+  },
+  {
+    "annee": 2023,
+    "champ": "ARTS",
+    "moyenne": 14.5366,
+    "ecart-type": 1.87424
+  },
+  {
+    "annee": 2023,
+    "champ": "EPS",
+    "moyenne": 14.6111,
+    "ecart-type": 1.81604
+  },
+  {
+    "annee": 2024,
+    "champ": "MATHEMATIQUES",
+    "moyenne": 11.8347,
+    "ecart-type": 3.9546
+  },
+  {
+    "annee": 2024,
+    "champ": "FRANCAIS",
+    "moyenne": 12.3031,
+    "ecart-type": 3.23789
+  },
+  {
+    "annee": 2024,
+    "champ": "HISTOIRE-GEO",
+    "moyenne": 12.5116,
+    "ecart-type": 3.18119
+  },
+  {
+    "annee": 2024,
+    "champ": "LANGUES VIVANTES",
+    "moyenne": 13.1441,
+    "ecart-type": 2.99242
+  },
+  {
+    "annee": 2024,
+    "champ": "SCIENCES-TECHNO-DP",
+    "moyenne": 12.9276,
+    "ecart-type": 2.77703
+  },
+  {
+    "annee": 2024,
+    "champ": "ARTS",
+    "moyenne": 14.5084,
+    "ecart-type": 1.96141
+  },
+  {
+    "annee": 2024,
+    "champ": "EPS",
+    "moyenne": 14.5643,
+    "ecart-type": 1.93461
   },
   {
     "annee": 2025,
     "champ": "MATHEMATIQUES",
-    "moyenne": 11.7792,
-    "ecart-type": 4.0464
+    "moyenne": 11.8787,
+    "ecart-type": 3.95099
+  },
+  {
+    "annee": 2025,
+    "champ": "FRANCAIS",
+    "moyenne": 12.3112,
+    "ecart-type": 3.26782
+  },
+  {
+    "annee": 2025,
+    "champ": "HISTOIRE-GEO",
+    "moyenne": 12.606,
+    "ecart-type": 3.17345
+  },
+  {
+    "annee": 2025,
+    "champ": "LANGUES VIVANTES",
+    "moyenne": 13.1834,
+    "ecart-type": 3.01142
   },
   {
     "annee": 2025,
     "champ": "SCIENCES-TECHNO-DP",
-    "moyenne": 12.9213,
-    "ecart-type": 2.80492
+    "moyenne": 12.9214,
+    "ecart-type": 2.80484
+  },
+  {
+    "annee": 2025,
+    "champ": "ARTS",
+    "moyenne": 14.5552,
+    "ecart-type": 1.96101
+  },
+  {
+    "annee": 2025,
+    "champ": "EPS",
+    "moyenne": 14.5939,
+    "ecart-type": 1.96253
   }
 ]
 
 On arrondit le résultat à 3 décimales (on ne tronque pas !) : par exemple 102,946666 devient 102,947 (et non pas 102,946)
-
 Étape 4 : pondération des champs disciplinaires
-
 Fort de nos 7 notes “harmonisées”, on applique pour terminer des pondérations différentes selon le champ disciplinaire (5 pour les Mathématiques et le Français, 4 pour les autres).
-
 Le score total pour le bilan périodique est la somme de ces 7 valeurs pondérées, arrondie à 3 décimales.
-
 Attention : applique-toi bien sur l'addition car tu as tendance à te tromper un peu trop souvent. Donc concentres-toi bien sur l'addition finale !
-
 Tu me présenteras en particulier un tableau avec les notes brutes et arrondies pour les 7 champs disciplinaires.
-
+b) bilan de fin de cycle
 Il y a également un bilan de fin de cycle qui est constitué de 8 compétences de socle traduites en points, (maîtrise insuffisante = 10 points ; maîtrise fragile = 25 points ; maîtrise satisfaisante = 40 points ; très bonne maîtrise = 50 points) :
 - Langages des arts et du corps
 - Langues étrangères et, le cas échéant, langues régionales
@@ -151,1549 +1664,627 @@ Il y a également un bilan de fin de cycle qui est constitué de 8 compétences 
 - Méthodes et outils pour apprendre
 - Représentations du monde et activité humaine
 - Systèmes naturels et systèmes techniques
+On fait la somme de toutes ces compétences, on obtient alors un total à 50 x 8 = 400 points.
+Puis on le multiplie par 12 pour avoir un résultat de bilan de fin de cycle sur 4800 maximum.
+Tu sais maintenant calculer le score total d'un voeu : 
+bonus géographique + bonus IPS + bonus boursier (600 s'il est déclaré boursier) + bilan périodique + bilan de fin de cycle
+Si ce score final est supérieur ou égal au seuil d'admission du lycée demandé, alors l'élève est admissible à ce lycée, sinon il est refusé.
+L'algorithme est executé 2 fois : la premiere fois uniquement avec les boursiers, et la seconde, avec les places restantes pour les non boursiers.
+Je ne connais pas les seuils d'admission pour le "concours" des boursiers, donc dans ce cas tu ne calculeras que le score.
+Parfois je ne disposerai pas des élements du bilan de fin de cycle, tu me diras alors,
+pour chaque lycée de secteur 1 associé à mon collège de secteur,
+quels résultats je dois avoir sur ce bilan de fin de cycle (combien de "très bonne maitrise" etc.) pour y être admis.
+Parfois je te donnerai directement les résultats de mon bilan de fin de cycle, il te suffira de le calculer et l'ajouter.
+Voici la liste des seuils d'admission 2025 pour le "concours" des non boursiers:
+[
+  {
+    "nom_lycee": "TURGOT",
+    "seuil": 40954.942
+  },
+  {
+    "nom_lycee": "VICTOR HUGO",
+    "seuil": 40738.994
+  },
+  {
+    "nom_lycee": "SOPHIE GERMAIN",
+    "seuil": 40730.823
+  },
+  {
+    "nom_lycee": "CONDORCET",
+    "seuil": 40721.267
+  },
+  {
+    "nom_lycee": "FENELON",
+    "seuil": 40707.968
+  },
+  {
+    "nom_lycee": "CLAUDE MONET",
+    "seuil": 40700.227
+  },
+  {
+    "nom_lycee": "BUFFON",
+    "seuil": 40691.609
+  },
+  {
+    "nom_lycee": "CHARLEMAGNE",
+    "seuil": 40672.751
+  },
+  {
+    "nom_lycee": "ARAGO",
+    "seuil": 40531.641
+  },
+  {
+    "nom_lycee": "HELENE BOUCHER",
+    "seuil": 40466.493
+  },
+  {
+    "nom_lycee": "MONTAIGNE",
+    "seuil": 40359.570
+  },
+  {
+    "nom_lycee": "RACINE",
+    "seuil": 40306.790
+  },
+  {
+    "nom_lycee": "LAVOISIER",
+    "seuil": 40302.531
+  },
+  {
+    "nom_lycee": "CHAPTAL",
+    "seuil": 40291.147
+  },
+  {
+    "nom_lycee": "CARNOT",
+    "seuil": 40258.000
+  },
+  {
+    "nom_lycee": "JANSON DE SAILLY",
+    "seuil": 40257.817
+  },
+  {
+    "nom_lycee": "LAMARTINE",
+    "seuil": 40167.386
+  },
+  {
+    "nom_lycee": "VICTOR DURUY",
+    "seuil": 39902.805
+  },
+  {
+    "nom_lycee": "JEAN-BAPTISTE SAY",
+    "seuil": 39851.425
+  },
+  {
+    "nom_lycee": "HONORE DE BALZAC",
+    "seuil": 39759.000
+  },
+  {
+    "nom_lycee": "PAUL BERT",
+    "seuil": 39708.454
+  },
+  {
+    "nom_lycee": "JULES FERRY",
+    "seuil": 39660.983
+  },
+  {
+    "nom_lycee": "P.G. DE GENNES",
+    "seuil": 39647.407
+  },
+  {
+    "nom_lycee": "CAMILLE SEE",
+    "seuil": 39491.170
+  },
+  {
+    "nom_lycee": "JEAN DE LA FONTAINE",
+    "seuil": 39454.851
+  },
+  {
+    "nom_lycee": "SIMONE WEIL",
+    "seuil": 39154.499
+  },
+  {
+    "nom_lycee": "RODIN",
+    "seuil": 38954.916
+  },
+  {
+    "nom_lycee": "GABRIEL FAURE",
+    "seuil": 38954.202
+  },
+  {
+    "nom_lycee": "VOLTAIRE",
+    "seuil": 38813.931
+  },
+  {
+    "nom_lycee": "MAURICE RAVEL",
+    "seuil": 25850.823
+  },
+  {
+    "nom_lycee": "JACQUES DECOUR",
+    "seuil": 25311.488
+  },
+  {
+    "nom_lycee": "EDGAR QUINET",
+    "seuil": 24551.441
+  },
+  {
+    "nom_lycee": "RABELAIS",
+    "seuil": 24276.000
+  },
+  {
+    "nom_lycee": "MOLIERE",
+    "seuil": 22924.391
+  },
+  {
+    "nom_lycee": "DIDEROT",
+    "seuil": 22820.853
+  },
+  {
+    "nom_lycee": "HENRI BERGSON",
+    "seuil": 22794.411
+  },
+  {
+    "nom_lycee": "EMILE DUBOIS",
+    "seuil": 17760.000
+  },
+  {
+    "nom_lycee": "DORIAN",
+    "seuil": 17760.000
+  },
+  {
+    "nom_lycee": "CLAUDE BERNARD",
+    "seuil": 17760.000
+  },
+  {
+    "nom_lycee": "COLBERT",
+    "seuil": 16800.000
+  },
+  {
+    "nom_lycee": "PAUL VALERY",
+    "seuil": 16800.000
+  }
+]
 
-On fait la somme de toutes ces compétences, on obtient alors un total à 50 x 8 = 400 points. Puis on le multiplie par 12 pour avoir un résultat de bilan de fin de cycle sur 4800 maximum.
-
-Chaque collège bénéficie de 5 lycées de secteur 1 pour lequel il obtient un bonus géographique de 32640 points (sinon 17760 points pour les lycées demandés qui ne font pas partie des 5).
-Exception pour le lycée Pierre Gilles de Gennes : tous le monde a le bonus 32640 pour ce lycée particulier.
-
-Je te fournis ces lycées de secteur 1 pour chaque collège pour que tu saches m'indiquer ces 5 lycées pour un collège donné.
-Est aussi présent le bonus IPS du collège (qui vaut 0, 600 ou 1200). Voici donc les données des collèges en 2025 :
+Et voici également l'historique des seuils d'admission non boursiers depuis 2021 (dans l'ordre croissant des années de 2021 à 2024):
+) :
 
 [
   {
-    "id_college": "0755433Y",
-    "nom_college": "AIME CESAIRE",
-    "lycees_secteur1": [
-      "CHAPTAL",
-      "COLBERT",
-      "CONDORCET",
-      "JACQUES DECOUR",
-      "JULES FERRY"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0750607C",
-    "nom_college": "ALAIN FOURNIER",
-    "lycees_secteur1": [
-      "DORIAN",
-      "SIMONE WEIL",
-      "SOPHIE GERMAIN",
-      "TURGOT",
-      "VOLTAIRE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0750445B",
-    "nom_college": "ALBERTO GIACOMETTI",
-    "lycees_secteur1": [
-      "BUFFON",
-      "CAMILLE SEE",
-      "EMILE DUBOIS",
-      "MONTAIGNE",
-      "VICTOR DURUY"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0751705W",
-    "nom_college": "ALPHONSE DAUDET",
-    "lycees_secteur1": [
-      "EMILE DUBOIS",
-      "LAVOISIER",
-      "MONTAIGNE",
-      "PAUL BERT",
-      "VICTOR DURUY"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0754305X",
-    "nom_college": "ANDRE CITROEN",
-    "lycees_secteur1": [
-      "BUFFON",
-      "CAMILLE SEE",
-      "JEAN DE LA FONTAINE",
-      "JEAN-BAPTISTE SAY",
-      "MOLIERE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752387M",
-    "nom_college": "ANDRE MALRAUX",
-    "lycees_secteur1": [
-      "CARNOT",
-      "CONDORCET",
-      "EDGAR QUINET",
-      "JANSON DE SAILLY",
-      "LAMARTINE"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0750608D",
-    "nom_college": "ANNE FRANK",
-    "lycees_secteur1": [
-      "ARAGO",
-      "DORIAN",
-      "HELENE BOUCHER",
-      "SIMONE WEIL",
-      "VICTOR HUGO"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752319N",
-    "nom_college": "ANTOINE COYSEVOX",
-    "lycees_secteur1": [
-      "CONDORCET",
-      "HONORE DE BALZAC",
-      "JULES FERRY",
-      "RABELAIS",
-      "RACINE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0750362L",
-    "nom_college": "BEAUMARCHAIS",
-    "lycees_secteur1": [
-      "ARAGO",
-      "CHARLEMAGNE",
-      "COLBERT",
-      "SOPHIE GERMAIN",
-      "VOLTAIRE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752829T",
-    "nom_college": "BERNARD PALISSY",
-    "lycees_secteur1": [
-      "EDGAR QUINET",
-      "FENELON",
-      "LAMARTINE",
-      "LAVOISIER",
-      "TURGOT"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752958H",
-    "nom_college": "BORIS VIAN",
-    "lycees_secteur1": [
-      "CARNOT",
-      "CHAPTAL",
-      "HONORE DE BALZAC",
-      "JANSON DE SAILLY",
-      "RABELAIS"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752545J",
-    "nom_college": "BUFFON",
-    "lycees_secteur1": [
-      "BUFFON",
-      "CAMILLE SEE",
-      "PAUL BERT",
-      "RODIN",
-      "VICTOR DURUY"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752694W",
-    "nom_college": "CAMILLE CLAUDEL",
-    "lycees_secteur1": [
-      "CLAUDE MONET",
-      "GABRIEL FAURE",
-      "LAVOISIER",
-      "PAUL VALERY",
-      "RODIN"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752546K",
-    "nom_college": "CAMILLE SEE",
-    "lycees_secteur1": [
-      "BUFFON",
-      "CAMILLE SEE",
-      "CLAUDE BERNARD",
-      "JEAN-BAPTISTE SAY",
-      "MOLIERE"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752552S",
-    "nom_college": "CARNOT",
-    "lycees_secteur1": [
-      "CARNOT",
-      "CHAPTAL",
-      "EDGAR QUINET",
-      "HONORE DE BALZAC",
-      "JANSON DE SAILLY"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752248L",
-    "nom_college": "CESAR FRANCK",
-    "lycees_secteur1": [
-      "CHARLEMAGNE",
-      "SIMONE WEIL",
-      "TURGOT",
-      "VICTOR HUGO",
-      "VOLTAIRE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752529S",
-    "nom_college": "CHAPTAL",
-    "lycees_secteur1": [
-      "CARNOT",
-      "CHAPTAL",
-      "EDGAR QUINET",
-      "JACQUES DECOUR",
-      "JANSON DE SAILLY"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752525M",
-    "nom_college": "CHARLEMAGNE",
-    "lycees_secteur1": [
-      "CHARLEMAGNE",
-      "SIMONE WEIL",
-      "SOPHIE GERMAIN",
-      "VICTOR HUGO",
-      "VOLTAIRE"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0751706X",
-    "nom_college": "CHARLES PEGUY",
-    "lycees_secteur1": [
-      "DIDEROT",
-      "HELENE BOUCHER",
-      "HENRI BERGSON",
-      "LAMARTINE",
-      "SOPHIE GERMAIN"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752547L",
-    "nom_college": "CLAUDE BERNARD",
-    "lycees_secteur1": [
-      "CLAUDE BERNARD",
-      "JANSON DE SAILLY",
-      "JEAN DE LA FONTAINE",
-      "JEAN-BAPTISTE SAY",
-      "MOLIERE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0750360J",
-    "nom_college": "CLAUDE CHAPPE",
-    "lycees_secteur1": [
-      "COLBERT",
-      "DIDEROT",
-      "HENRI BERGSON",
-      "SOPHIE GERMAIN",
-      "TURGOT"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752317L",
-    "nom_college": "CLAUDE DEBUSSY",
-    "lycees_secteur1": [
-      "BUFFON",
-      "CAMILLE SEE",
-      "CLAUDE BERNARD",
-      "MOLIERE",
-      "VICTOR DURUY"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752539C",
-    "nom_college": "CLAUDE MONET",
-    "lycees_secteur1": [
-      "CLAUDE MONET",
-      "GABRIEL FAURE",
-      "PAUL BERT",
-      "RODIN",
-      "SOPHIE GERMAIN"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0755241P",
-    "nom_college": "COLETTE BESSON",
-    "lycees_secteur1": [
-      "CHARLEMAGNE",
-      "COLBERT",
-      "HELENE BOUCHER",
-      "VICTOR HUGO",
-      "VOLTAIRE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0751791P",
-    "nom_college": "CONDORCET",
-    "lycees_secteur1": [
-      "CHAPTAL",
-      "COLBERT",
-      "CONDORCET",
-      "EDGAR QUINET",
-      "RACINE"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0755030K",
-    "nom_college": "DANIEL MAYER",
-    "lycees_secteur1": [
-      "COLBERT",
-      "CONDORCET",
-      "JACQUES DECOUR",
-      "JULES FERRY",
-      "LAMARTINE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0751563S",
-    "nom_college": "DE STAEL",
-    "lycees_secteur1": [
-      "BUFFON",
-      "CAMILLE SEE",
-      "JANSON DE SAILLY",
-      "RODIN",
-      "VICTOR DURUY"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0755095F",
-    "nom_college": "EDGAR VARESE",
-    "lycees_secteur1": [
-      "COLBERT",
-      "DIDEROT",
-      "FENELON",
-      "LAMARTINE",
-      "TURGOT"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0753345D",
-    "nom_college": "EDMOND MICHELET",
-    "lycees_secteur1": [
-      "COLBERT",
-      "CONDORCET",
-      "HENRI BERGSON",
-      "LAMARTINE",
-      "RACINE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0751707Y",
-    "nom_college": "EDOUARD PAILLERON",
-    "lycees_secteur1": [
-      "CHAPTAL",
-      "COLBERT",
-      "DIDEROT",
-      "HENRI BERGSON",
-      "TURGOT"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752385K",
-    "nom_college": "ELSA TRIOLET",
-    "lycees_secteur1": [
-      "BUFFON",
-      "CLAUDE MONET",
-      "GABRIEL FAURE",
-      "LAVOISIER",
-      "MONTAIGNE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0753937X",
-    "nom_college": "EVARISTE GALOIS",
-    "lycees_secteur1": [
-      "CHARLEMAGNE",
-      "CLAUDE MONET",
-      "EMILE DUBOIS",
-      "GABRIEL FAURE",
-      "RODIN"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0753046D",
-    "nom_college": "FLORA TRISTAN",
-    "lycees_secteur1": [
-      "ARAGO",
-      "DIDEROT",
-      "HELENE BOUCHER",
-      "MAURICE RAVEL",
-      "VOLTAIRE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752693V",
-    "nom_college": "FRANCOIS COUPERIN",
-    "lycees_secteur1": [
-      "CHARLEMAGNE",
-      "LAVOISIER",
-      "SIMONE WEIL",
-      "SOPHIE GERMAIN",
-      "VOLTAIRE"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752544H",
-    "nom_college": "FRANCOIS VILLON",
-    "lycees_secteur1": [
-      "BUFFON",
-      "CAMILLE SEE",
-      "EMILE DUBOIS",
-      "PAUL BERT",
-      "VICTOR DURUY"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0750552T",
-    "nom_college": "FRANCOISE DOLTO",
-    "lycees_secteur1": [
-      "HELENE BOUCHER",
-      "HENRI BERGSON",
-      "SIMONE WEIL",
-      "SOPHIE GERMAIN",
-      "VOLTAIRE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0755778Y",
-    "nom_college": "FRANCOISE SELIGMANN",
-    "lycees_secteur1": [
-      "COLBERT",
-      "HENRI BERGSON",
-      "JULES FERRY",
-      "TURGOT",
-      "VOLTAIRE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752540D",
-    "nom_college": "GABRIEL FAURE",
-    "lycees_secteur1": [
-      "CHARLEMAGNE",
-      "CLAUDE MONET",
-      "GABRIEL FAURE",
-      "PAUL VALERY",
-      "RODIN"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752316K",
-    "nom_college": "GEORGE SAND",
-    "lycees_secteur1": [
-      "BUFFON",
-      "CLAUDE MONET",
-      "GABRIEL FAURE",
-      "PAUL BERT",
-      "RODIN"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752957G",
-    "nom_college": "GEORGES BRAQUE",
-    "lycees_secteur1": [
-      "CLAUDE MONET",
-      "EMILE DUBOIS",
-      "GABRIEL FAURE",
-      "LAVOISIER",
-      "RODIN"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0750507U",
-    "nom_college": "GEORGES BRASSENS",
-    "lycees_secteur1": [
-      "DIDEROT",
-      "FENELON",
-      "HENRI BERGSON",
-      "LAMARTINE",
-      "TURGOT"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0750546L",
-    "nom_college": "GEORGES CLEMENCEAU",
-    "lycees_secteur1": [
-      "CHAPTAL",
-      "JACQUES DECOUR",
-      "JULES FERRY",
-      "LAMARTINE",
-      "RABELAIS"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0750444A",
-    "nom_college": "GEORGES COURTELINE",
-    "lycees_secteur1": [
-      "CHARLEMAGNE",
-      "DORIAN",
-      "HELENE BOUCHER",
-      "MAURICE RAVEL",
-      "PAUL VALERY"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752192A",
-    "nom_college": "GEORGES DUHAMEL",
-    "lycees_secteur1": [
-      "BUFFON",
-      "CAMILLE SEE",
-      "PAUL BERT",
-      "RODIN",
-      "VICTOR DURUY"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752606A",
-    "nom_college": "GEORGES MELIES",
-    "lycees_secteur1": [
-      "COLBERT",
-      "HENRI BERGSON",
-      "JACQUES DECOUR",
-      "JULES FERRY",
-      "LAMARTINE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0753938Y",
-    "nom_college": "GEORGES ROUAULT",
-    "lycees_secteur1": [
-      "COLBERT",
-      "DIDEROT",
-      "HELENE BOUCHER",
-      "HENRI BERGSON",
-      "MAURICE RAVEL"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752195D",
-    "nom_college": "GERARD PHILIPE",
-    "lycees_secteur1": [
-      "CONDORCET",
-      "JACQUES DECOUR",
-      "LAMARTINE",
-      "RABELAIS",
-      "RACINE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0753936W",
-    "nom_college": "GERMAINE TILLION",
-    "lycees_secteur1": [
-      "DORIAN",
-      "HELENE BOUCHER",
-      "MAURICE RAVEL",
-      "PAUL VALERY",
-      "SOPHIE GERMAIN"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752190Y",
-    "nom_college": "GUILLAUME APOLLINAIRE",
-    "lycees_secteur1": [
-      "BUFFON",
-      "JANSON DE SAILLY",
-      "JEAN DE LA FONTAINE",
-      "JEAN-BAPTISTE SAY",
-      "VICTOR DURUY"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752695X",
-    "nom_college": "GUILLAUME BUDE",
-    "lycees_secteur1": [
-      "COLBERT",
-      "DIDEROT",
-      "HENRI BERGSON",
-      "SOPHIE GERMAIN",
-      "TURGOT"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0753518S",
-    "nom_college": "GUSTAVE FLAUBERT",
-    "lycees_secteur1": [
-      "CLAUDE MONET",
-      "GABRIEL FAURE",
-      "PAUL VALERY",
-      "RODIN",
-      "SOPHIE GERMAIN"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752189X",
-    "nom_college": "GUY FLAVIEN",
-    "lycees_secteur1": [
-      "ARAGO",
-      "DORIAN",
-      "HELENE BOUCHER",
-      "MAURICE RAVEL",
-      "PAUL VALERY"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752252R",
-    "nom_college": "HECTOR BERLIOZ",
-    "lycees_secteur1": [
-      "CONDORCET",
-      "HONORE DE BALZAC",
-      "JULES FERRY",
-      "RABELAIS",
-      "RACINE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752556W",
-    "nom_college": "HELENE BOUCHER",
-    "lycees_secteur1": [
-      "ARAGO",
-      "DORIAN",
-      "HELENE BOUCHER",
-      "PAUL VALERY",
-      "VICTOR HUGO"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752555V",
-    "nom_college": "HENRI BERGSON",
-    "lycees_secteur1": [
-      "CHAPTAL",
-      "COLBERT",
-      "DIDEROT",
-      "HENRI BERGSON",
-      "TURGOT"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752526N",
-    "nom_college": "HENRI IV",
-    "lycees_secteur1": [
-      "CHARLEMAGNE",
-      "FENELON",
-      "LAVOISIER",
-      "PAUL BERT",
-      "RODIN"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0750591K",
-    "nom_college": "HENRI MATISSE",
-    "lycees_secteur1": [
-      "ARAGO",
-      "DORIAN",
-      "HELENE BOUCHER",
-      "MAURICE RAVEL",
-      "PAUL VALERY"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752553T",
-    "nom_college": "HONORE DE BALZAC",
-    "lycees_secteur1": [
-      "HONORE DE BALZAC",
-      "JANSON DE SAILLY",
-      "JULES FERRY",
-      "RABELAIS",
-      "RACINE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752532V",
-    "nom_college": "JACQUES DECOUR",
-    "lycees_secteur1": [
-      "CARNOT",
-      "CHAPTAL",
-      "EDGAR QUINET",
-      "JACQUES DECOUR",
-      "JULES FERRY"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752187V",
-    "nom_college": "JACQUES PREVERT",
-    "lycees_secteur1": [
-      "CAMILLE SEE",
-      "FENELON",
-      "MONTAIGNE",
-      "PAUL BERT",
-      "VICTOR DURUY"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752548M",
-    "nom_college": "JANSON DE SAILLY",
-    "lycees_secteur1": [
-      "CLAUDE BERNARD",
-      "JANSON DE SAILLY",
-      "JEAN DE LA FONTAINE",
-      "JEAN-BAPTISTE SAY",
-      "MOLIERE"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752550P",
-    "nom_college": "JEAN DE LA FONTAINE",
-    "lycees_secteur1": [
-      "CLAUDE BERNARD",
-      "JANSON DE SAILLY",
-      "JEAN DE LA FONTAINE",
-      "JEAN-BAPTISTE SAY",
-      "MOLIERE"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0750611G",
-    "nom_college": "JEAN MOULIN",
-    "lycees_secteur1": [
-      "EMILE DUBOIS",
-      "LAVOISIER",
-      "MONTAIGNE",
-      "PAUL BERT",
-      "VICTOR DURUY"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0753939Z",
-    "nom_college": "JEAN PERRIN",
-    "lycees_secteur1": [
-      "ARAGO",
-      "DORIAN",
-      "HELENE BOUCHER",
-      "MAURICE RAVEL",
-      "PAUL VALERY"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0750478M",
-    "nom_college": "JEAN-BAPTISTE CLEMENT",
-    "lycees_secteur1": [
-      "COLBERT",
-      "HELENE BOUCHER",
-      "MAURICE RAVEL",
-      "TURGOT",
-      "VOLTAIRE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0751703U",
-    "nom_college": "JEAN-BAPTISTE POQUELIN",
-    "lycees_secteur1": [
-      "CHARLEMAGNE",
-      "COLBERT",
-      "JACQUES DECOUR",
-      "LAMARTINE",
-      "SOPHIE GERMAIN"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752549N",
-    "nom_college": "JEAN-BAPTISTE SAY",
-    "lycees_secteur1": [
-      "CLAUDE BERNARD",
-      "JANSON DE SAILLY",
-      "JEAN DE LA FONTAINE",
-      "JEAN-BAPTISTE SAY",
-      "MOLIERE"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752542F",
-    "nom_college": "JEAN-FRANCOIS OEBEN",
-    "lycees_secteur1": [
-      "ARAGO",
-      "MAURICE RAVEL",
-      "PAUL VALERY",
-      "SIMONE WEIL",
-      "VICTOR HUGO"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752533W",
-    "nom_college": "JULES FERRY",
-    "lycees_secteur1": [
-      "CHAPTAL",
-      "CONDORCET",
-      "JACQUES DECOUR",
-      "JULES FERRY",
-      "RABELAIS"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752249M",
-    "nom_college": "JULES ROMAINS",
-    "lycees_secteur1": [
-      "BUFFON",
-      "CAMILLE SEE",
-      "MOLIERE",
-      "PAUL BERT",
-      "VICTOR DURUY"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0750610F",
-    "nom_college": "JULES VERNE",
-    "lycees_secteur1": [
-      "ARAGO",
-      "DORIAN",
-      "MAURICE RAVEL",
-      "PAUL VALERY",
-      "VICTOR HUGO"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0753047E",
-    "nom_college": "LA GRANGE AUX BELLES",
-    "lycees_secteur1": [
-      "CHAPTAL",
-      "COLBERT",
-      "FENELON",
-      "LAMARTINE",
-      "VOLTAIRE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0755779Z",
-    "nom_college": "LA ROSE BLANCHE",
-    "lycees_secteur1": [
-      "CARNOT",
-      "CONDORCET",
-      "EDGAR QUINET",
-      "HONORE DE BALZAC",
-      "RACINE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752534X",
-    "nom_college": "LAMARTINE",
-    "lycees_secteur1": [
-      "COLBERT",
-      "CONDORCET",
-      "JACQUES DECOUR",
-      "LAMARTINE",
-      "RACINE"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752531U",
-    "nom_college": "LAVOISIER",
-    "lycees_secteur1": [
-      "FENELON",
-      "LAVOISIER",
-      "MONTAIGNE",
-      "PAUL BERT",
-      "RODIN"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752696Y",
-    "nom_college": "LEON GAMBETTA",
-    "lycees_secteur1": [
-      "HELENE BOUCHER",
-      "HENRI BERGSON",
-      "MAURICE RAVEL",
-      "TURGOT",
-      "VOLTAIRE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752251P",
-    "nom_college": "LOUISE MICHEL",
-    "lycees_secteur1": [
-      "COLBERT",
-      "DIDEROT",
-      "JACQUES DECOUR",
-      "LAMARTINE",
-      "VICTOR HUGO"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0750465Y",
-    "nom_college": "LUCIE ET RAYMOND AUBRAC",
-    "lycees_secteur1": [
-      "CHARLEMAGNE",
-      "COLBERT",
-      "HENRI BERGSON",
-      "VICTOR HUGO",
-      "VOLTAIRE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0750550R",
-    "nom_college": "LUCIE FAURE",
-    "lycees_secteur1": [
-      "ARAGO",
-      "DORIAN",
-      "HELENE BOUCHER",
-      "MAURICE RAVEL",
-      "PAUL VALERY"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0754706H",
-    "nom_college": "MARIE CURIE",
-    "lycees_secteur1": [
-      "CONDORCET",
-      "JACQUES DECOUR",
-      "LAMARTINE",
-      "RABELAIS",
-      "RACINE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752196E",
-    "nom_college": "MARX DORMOY",
-    "lycees_secteur1": [
-      "CHAPTAL",
-      "COLBERT",
-      "EDGAR QUINET",
-      "JACQUES DECOUR",
-      "RACINE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752557X",
-    "nom_college": "MAURICE RAVEL",
-    "lycees_secteur1": [
-      "ARAGO",
-      "DORIAN",
-      "MAURICE RAVEL",
-      "PAUL VALERY",
-      "SOPHIE GERMAIN"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0751793S",
-    "nom_college": "MAURICE UTRILLO",
-    "lycees_secteur1": [
-      "CARNOT",
-      "HONORE DE BALZAC",
-      "JACQUES DECOUR",
-      "LAMARTINE",
-      "RABELAIS"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752318M",
-    "nom_college": "MODIGLIANI",
-    "lycees_secteur1": [
-      "BUFFON",
-      "CAMILLE SEE",
-      "EMILE DUBOIS",
-      "JEAN-BAPTISTE SAY",
-      "VICTOR DURUY"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752551R",
-    "nom_college": "MOLIERE",
-    "lycees_secteur1": [
-      "CLAUDE BERNARD",
-      "JANSON DE SAILLY",
-      "JEAN DE LA FONTAINE",
-      "JEAN-BAPTISTE SAY",
-      "MOLIERE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752527P",
-    "nom_college": "MONTAIGNE",
-    "lycees_secteur1": [
-      "CAMILLE SEE",
-      "FENELON",
-      "LAVOISIER",
-      "MONTAIGNE",
-      "PAUL BERT"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752523K",
-    "nom_college": "MONTGOLFIER",
-    "lycees_secteur1": [
-      "LAVOISIER",
-      "SIMONE WEIL",
-      "SOPHIE GERMAIN",
-      "TURGOT",
-      "VOLTAIRE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0750525N",
-    "nom_college": "MOULIN DES PRES",
-    "lycees_secteur1": [
-      "BUFFON",
-      "CLAUDE MONET",
-      "GABRIEL FAURE",
-      "PAUL BERT",
-      "RODIN"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752530T",
-    "nom_college": "OCTAVE GREARD",
-    "lycees_secteur1": [
-      "CARNOT",
-      "CHAPTAL",
-      "EDGAR QUINET",
-      "JACQUES DECOUR",
-      "RACINE"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752543G",
-    "nom_college": "PAUL BERT",
-    "lycees_secteur1": [
-      "EMILE DUBOIS",
-      "LAVOISIER",
-      "MONTAIGNE",
-      "PAUL BERT",
-      "RODIN"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752250N",
-    "nom_college": "PAUL GAUGUIN",
-    "lycees_secteur1": [
-      "CARNOT",
-      "EDGAR QUINET",
-      "JACQUES DECOUR",
-      "LAMARTINE",
-      "RACINE"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752537A",
-    "nom_college": "PAUL VALERY",
-    "lycees_secteur1": [
-      "DORIAN",
-      "HELENE BOUCHER",
-      "MAURICE RAVEL",
-      "PAUL VALERY",
-      "VICTOR HUGO"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0750609E",
-    "nom_college": "PAUL VERLAINE",
-    "lycees_secteur1": [
-      "ARAGO",
-      "DORIAN",
-      "MAURICE RAVEL",
-      "SOPHIE GERMAIN",
-      "VICTOR HUGO"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0751790N",
-    "nom_college": "PIERRE ALVISET",
-    "lycees_secteur1": [
-      "CHARLEMAGNE",
-      "EMILE DUBOIS",
-      "MONTAIGNE",
-      "RODIN",
-      "SOPHIE GERMAIN"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752107H",
-    "nom_college": "PIERRE DE RONSARD",
-    "lycees_secteur1": [
-      "CARNOT",
-      "CHAPTAL",
-      "EDGAR QUINET",
-      "HONORE DE BALZAC",
-      "JACQUES DECOUR"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752198G",
-    "nom_college": "PIERRE MENDES FRANCE",
-    "lycees_secteur1": [
-      "ARAGO",
-      "DIDEROT",
-      "HELENE BOUCHER",
-      "MAURICE RAVEL",
-      "VOLTAIRE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0750387N",
-    "nom_college": "PIERRE-JEAN DE BERANGER",
-    "lycees_secteur1": [
-      "ARAGO",
-      "CHARLEMAGNE",
-      "DIDEROT",
-      "SIMONE WEIL",
-      "VOLTAIRE"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0754528P",
-    "nom_college": "PILATRE DE ROZIER",
-    "lycees_secteur1": [
-      "ARAGO",
-      "HELENE BOUCHER",
-      "MAURICE RAVEL",
-      "PAUL VALERY",
-      "VOLTAIRE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752186U",
-    "nom_college": "RAYMOND QUENEAU",
-    "lycees_secteur1": [
-      "EMILE DUBOIS",
-      "LAVOISIER",
-      "MONTAIGNE",
-      "PAUL BERT",
-      "RODIN"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0754355B",
-    "nom_college": "ROBERT DOISNEAU",
-    "lycees_secteur1": [
-      "ARAGO",
-      "CHARLEMAGNE",
-      "DORIAN",
-      "TURGOT",
-      "VOLTAIRE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752538B",
-    "nom_college": "RODIN",
-    "lycees_secteur1": [
-      "CLAUDE MONET",
-      "GABRIEL FAURE",
-      "LAVOISIER",
-      "PAUL BERT",
-      "RODIN"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0750429J",
-    "nom_college": "ROLAND DORGELES",
-    "lycees_secteur1": [
-      "CHAPTAL",
-      "JACQUES DECOUR",
-      "JULES FERRY",
-      "LAMARTINE",
-      "RABELAIS"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0754253R",
-    "nom_college": "SAINT-EXUPERY",
-    "lycees_secteur1": [
-      "EMILE DUBOIS",
-      "LAVOISIER",
-      "MONTAIGNE",
-      "PAUL BERT",
-      "RODIN"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0750575T",
-    "nom_college": "SONIA DELAUNAY",
-    "lycees_secteur1": [
-      "CHAPTAL",
-      "COLBERT",
-      "FENELON",
-      "HENRI BERGSON",
-      "LAMARTINE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752554U",
-    "nom_college": "STEPHANE MALLARME",
-    "lycees_secteur1": [
-      "CARNOT",
-      "HONORE DE BALZAC",
-      "JULES FERRY",
-      "RABELAIS",
-      "RACINE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0755747P",
-    "nom_college": "SUZANNE LACORE",
-    "lycees_secteur1": [
-      "COLBERT",
-      "CONDORCET",
-      "DIDEROT",
-      "HONORE DE BALZAC",
-      "LAMARTINE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0755000C",
-    "nom_college": "THOMAS MANN",
-    "lycees_secteur1": [
-      "ARAGO",
-      "CLAUDE MONET",
-      "FENELON",
-      "GABRIEL FAURE",
-      "PAUL VALERY"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0750584C",
-    "nom_college": "VALMY",
-    "lycees_secteur1": [
-      "COLBERT",
-      "FENELON",
-      "HENRI BERGSON",
-      "TURGOT",
-      "VOLTAIRE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0752528R",
-    "nom_college": "VICTOR DURUY",
-    "lycees_secteur1": [
-      "BUFFON",
-      "CAMILLE SEE",
-      "MONTAIGNE",
-      "PAUL BERT",
-      "VICTOR DURUY"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752524L",
-    "nom_college": "VICTOR HUGO",
-    "lycees_secteur1": [
-      "FENELON",
-      "SIMONE WEIL",
-      "SOPHIE GERMAIN",
-      "VICTOR HUGO",
-      "VOLTAIRE"
-    ],
-    "bonus": 0
-  },
-  {
-    "id_college": "0752536Z",
-    "nom_college": "VOLTAIRE",
-    "lycees_secteur1": [
-      "CHARLEMAGNE",
-      "COLBERT",
-      "DORIAN",
-      "TURGOT",
-      "VOLTAIRE"
-    ],
-    "bonus": 600
-  },
-  {
-    "id_college": "0750484U",
-    "nom_college": "W.A. MOZART",
-    "lycees_secteur1": [
-      "COLBERT",
-      "DIDEROT",
-      "HENRI BERGSON",
-      "JULES FERRY",
-      "LAMARTINE"
-    ],
-    "bonus": 1200
-  },
-  {
-    "id_college": "0752108J",
-    "nom_college": "YVONNE LE TAC",
-    "lycees_secteur1": [
-      "CARNOT",
-      "EDGAR QUINET",
-      "JACQUES DECOUR",
-      "JULES FERRY",
-      "RACINE"
-    ],
-    "bonus": 0
+    "nom": "ARAGO",
+    "seuils": [
+      40386.517,
+      40467.318,
+      40536.52,
+      40590.514
+    ]
+  },
+  {
+    "nom": "BUFFON",
+    "seuils": [
+      40582.466,
+      40439.889,
+      40559.891,
+      40668.241
+    ]
+  },
+  {
+    "nom": "CAMILLE SEE",
+    "seuils": [
+      39436.35,
+      38766.489,
+      39612.601,
+      39483.285
+    ]
+  },
+  {
+    "nom": "CARNOT",
+    "seuils": [
+      40547,
+      40400.777,
+      40388.736,
+      40484.76
+    ]
+  },
+  {
+    "nom": "CHAPTAL",
+    "seuils": [
+      40729.127,
+      40716.791,
+      40741.477,
+      40736.155
+    ]
+  },
+  {
+    "nom": "CHARLEMAGNE",
+    "seuils": [
+      40735.851,
+      40685.023,
+      40709.649,
+      40736.155
+    ]
+  },
+  {
+    "nom": "CLAUDE BERNARD",
+    "seuils": [
+      7150.874,
+      21767.262,
+      23678.567,
+      0
+    ]
+  },
+  {
+    "nom": "CLAUDE MONET",
+    "seuils": [
+      40569.767,
+      40593.618,
+      40250.748,
+      40686.667
+    ]
+  },
+  {
+    "nom": "COLBERT",
+    "seuils": [
+      22588.564,
+      22280,
+      5596.11,
+      22014.473
+    ]
+  },
+  {
+    "nom": "CONDORCET",
+    "seuils": [
+      41095.851,
+      41098.058,
+      41143.616,
+      40855.618
+    ]
+  },
+  {
+    "nom": "DIDEROT",
+    "seuils": [
+      25316.545,
+      23470,
+      5664.67,
+      22177.771
+    ]
+  },
+  {
+    "nom": "DORIAN",
+    "seuils": [
+      25185.901,
+      23065.83,
+      25525.611,
+      23115.722
+    ]
+  },
+  {
+    "nom": "EDGAR QUINET",
+    "seuils": [
+      24129.843,
+      39047.581,
+      38713.174,
+      39236.286
+    ]
+  },
+  {
+    "nom": "EMILE DUBOIS",
+    "seuils": [
+      38094.583,
+      32640,
+      39073.4,
+      9223.11
+    ]
+  },
+  {
+    "nom": "FENELON",
+    "seuils": [
+      40582.043,
+      40608.709,
+      40689.837,
+      40673.489
+    ]
+  },
+  {
+    "nom": "GABRIEL FAURE",
+    "seuils": [
+      23180.853,
+      24402.417,
+      5756.611,
+      38065.289
+    ]
+  },
+  {
+    "nom": "HELENE BOUCHER",
+    "seuils": [
+      40724.259,
+      40633.911,
+      40859,
+      40781.376
+    ]
+  },
+  {
+    "nom": "HENRI BERGSON",
+    "seuils": [
+      6796.35,
+      24162.852,
+      0,
+      38915.252
+    ]
+  },
+  {
+    "nom": "HONORE DE BALZAC",
+    "seuils": [
+      40269.556,
+      39935.372,
+      39794.109,
+      39811.346
+    ]
+  },
+  {
+    "nom": "JACQUES DECOUR",
+    "seuils": [
+      25480.702,
+      32640,
+      25312.224,
+      39394.86
+    ]
+  },
+  {
+    "nom": "JANSON DE SAILLY",
+    "seuils": [
+      40371.575,
+      40170.93,
+      40225,
+      40352.556
+    ]
+  },
+  {
+    "nom": "JEAN DE LA FONTAINE",
+    "seuils": [
+      39731.743,
+      39758.988,
+      0,
+      39729.296
+    ]
+  },
+  {
+    "nom": "JEAN-BAPTISTE SAY",
+    "seuils": [
+      40172.502,
+      40016.898,
+      39935.403,
+      40174.719
+    ]
+  },
+  {
+    "nom": "JULES FERRY",
+    "seuils": [
+      40332.292,
+      40253.169,
+      40088.664,
+      40154.668
+    ]
+  },
+  {
+    "nom": "LAMARTINE",
+    "seuils": [
+      39587.952,
+      40146.603,
+      39806.335,
+      40064.12
+    ]
+  },
+  {
+    "nom": "LAVOISIER",
+    "seuils": [
+      40559.383,
+      40600.589,
+      40519.962,
+      40405.959
+    ]
+  },
+  {
+    "nom": "MAURICE RAVEL",
+    "seuils": [
+      39610.883,
+      39266.478,
+      39597.318,
+      26280.519
+    ]
+  },
+  {
+    "nom": "MOLIERE",
+    "seuils": [
+      39139.363,
+      38884.118,
+      39128.392,
+      38475.347
+    ]
+  },
+  {
+    "nom": "MONTAIGNE",
+    "seuils": [
+      40398.65,
+      40180.67,
+      40405.782,
+      40601.419
+    ]
+  },
+  {
+    "nom": "P.G. DE GENNES",
+    "seuils": [
+      7222.187,
+      32640,
+      38552.992,
+      39733.352
+    ]
+  },
+  {
+    "nom": "PAUL BERT",
+    "seuils": [
+      39605.27,
+      39634.293,
+      39854.371,
+      39554.517
+    ]
+  },
+  {
+    "nom": "PAUL VALERY",
+    "seuils": [
+      22268.841,
+      17760,
+      5203.038,
+      6598.859
+    ]
+  },
+  {
+    "nom": "RABELAIS",
+    "seuils": [
+      7707.827,
+      22132.527,
+      5993.295,
+      7303.848
+    ]
+  },
+  {
+    "nom": "RACINE",
+    "seuils": [
+      40549.926,
+      40462.993,
+      40515.909,
+      40568.082
+    ]
+  },
+  {
+    "nom": "RODIN",
+    "seuils": [
+      25216.998,
+      7886.202,
+      5586.306,
+      39084.229
+    ]
+  },
+  {
+    "nom": "SIMONE WEIL",
+    "seuils": [
+      40170.521,
+      39790.504,
+      39587.918,
+      39834.259
+    ]
+  },
+  {
+    "nom": "SOPHIE GERMAIN",
+    "seuils": [
+      40925.103,
+      40624.178,
+      40718.002,
+      40736.155
+    ]
+  },
+  {
+    "nom": "TURGOT",
+    "seuils": [
+      41090.421,
+      41031.602,
+      41172.453,
+      40978.096
+    ]
+  },
+  {
+    "nom": "VICTOR DURUY",
+    "seuils": [
+      40120.867,
+      40037.442,
+      40259,
+      40150.119
+    ]
+  },
+  {
+    "nom": "VICTOR HUGO",
+    "seuils": [
+      40713.103,
+      40656.495,
+      40707.363,
+      40912.86
+    ]
+  },
+  {
+    "nom": "VOLTAIRE",
+    "seuils": [
+      25715.64,
+      39095.508,
+      39128.612,
+      39494.86
+    ]
   }
 ]
 
-Le score final d'un élève d'un collège donné pour obtenir un lycee est donc la somme :
-- du bilan périodique
-- du bilan de fin de cycle
-- du bonus IPS du collège
-- du bonus géographique lié à l'association collège/lycée demandé.
+J'ai quelques seuils d'admission boursiers 2025 :
+HENRI BERGSON	40689.429
+VOLTAIRE	40042.431
+COLBERT	40062.875
+LAMARTINE	40480.602
+VICTOR HUGO	25160.656
+TURGOT	40310.043
+CONDORCET	26411.519
+HELENE BOUCHER	39741.772
+SOPHIE GERMAIN	24738.072
+SIMONE WEIL	38486.323
 
-Si ce score final est supérieur ou égal au seuil d'admission du lycée, alors l'élève est admissible à ce lycée.
-
-Parfois je ne disposerai pas des élements du bilan de fin de cycle, tu me diras alors, pour chaque lycée de secteur 1 associé à mon collège, quels résultats je dois avoir sur ce bilan de fin de cycle (combien de très bonnes maitrises etc.) pour y être admis.
-
-Voici la liste des seuils d'admission 2025 :
-
-[
-  {
-    "nom_lycee": "TURGOT",
-    "seuil": 40954.942
-  },
-  {
-    "nom_lycee": "VICTOR HUGO",
-    "seuil": 40738.994
-  },
-  {
-    "nom_lycee": "SOPHIE GERMAIN",
-    "seuil": 40730.823
-  },
-  {
-    "nom_lycee": "CONDORCET",
-    "seuil": 40721.267
-  },
-  {
-    "nom_lycee": "FENELON",
-    "seuil": 40707.968
-  },
-  {
-    "nom_lycee": "CLAUDE MONET",
-    "seuil": 40700.227
-  },
-  {
-    "nom_lycee": "BUFFON",
-    "seuil": 40691.609
-  },
-  {
-    "nom_lycee": "CHARLEMAGNE",
-    "seuil": 40672.751
-  },
-  {
-    "nom_lycee": "ARAGO",
-    "seuil": 40531.641
-  },
-  {
-    "nom_lycee": "HELENE BOUCHER",
-    "seuil": 40466.493
-  },
-  {
-    "nom_lycee": "MONTAIGNE",
-    "seuil": 40359.570
-  },
-  {
-    "nom_lycee": "RACINE",
-    "seuil": 40306.790
-  },
-  {
-    "nom_lycee": "LAVOISIER",
-    "seuil": 40302.531
-  },
-  {
-    "nom_lycee": "CHAPTAL",
-    "seuil": 40291.147
-  },
-  {
-    "nom_lycee": "CARNOT",
-    "seuil": 40258.000
-  },
-  {
-    "nom_lycee": "JANSON DE SAILLY",
-    "seuil": 40257.817
-  },
-  {
-    "nom_lycee": "LAMARTINE",
-    "seuil": 40167.386
-  },
-  {
-    "nom_lycee": "VICTOR DURUY",
-    "seuil": 39902.805
-  },
-  {
-    "nom_lycee": "JEAN-BAPTISTE SAY",
-    "seuil": 39851.425
-  },
-  {
-    "nom_lycee": "HONORE DE BALZAC",
-    "seuil": 39759.000
-  },
-  {
-    "nom_lycee": "PAUL BERT",
-    "seuil": 39708.454
-  },
-  {
-    "nom_lycee": "JULES FERRY",
-    "seuil": 39660.983
-  },
-  {
-    "nom_lycee": "P.G. DE GENNES",
-    "seuil": 39647.407
-  },
-  {
-    "nom_lycee": "CAMILLE SEE",
-    "seuil": 39491.170
-  },
-  {
-    "nom_lycee": "JEAN DE LA FONTAINE",
-    "seuil": 39454.851
-  },
-  {
-    "nom_lycee": "SIMONE WEIL",
-    "seuil": 39154.499
-  },
-  {
-    "nom_lycee": "RODIN",
-    "seuil": 38954.916
-  },
-  {
-    "nom_lycee": "GABRIEL FAURE",
-    "seuil": 38954.202
-  },
-  {
-    "nom_lycee": "VOLTAIRE",
-    "seuil": 38813.931
-  },
-  {
-    "nom_lycee": "MAURICE RAVEL",
-    "seuil": 25850.823
-  },
-  {
-    "nom_lycee": "JACQUES DECOUR",
-    "seuil": 25311.488
-  },
-  {
-    "nom_lycee": "EDGAR QUINET",
-    "seuil": 24551.441
-  },
-  {
-    "nom_lycee": "RABELAIS",
-    "seuil": 24276.000
-  },
-  {
-    "nom_lycee": "MOLIERE",
-    "seuil": 22924.391
-  },
-  {
-    "nom_lycee": "DIDEROT",
-    "seuil": 22820.853
-  },
-  {
-    "nom_lycee": "HENRI BERGSON",
-    "seuil": 22794.411
-  },
-  {
-    "nom_lycee": "EMILE DUBOIS",
-    "seuil": 17760.000
-  },
-  {
-    "nom_lycee": "DORIAN",
-    "seuil": 17760.000
-  },
-  {
-    "nom_lycee": "CLAUDE BERNARD",
-    "seuil": 17760.000
-  },
-  {
-    "nom_lycee": "COLBERT",
-    "seuil": 16800.000
-  },
-  {
-    "nom_lycee": "PAUL VALERY",
-    "seuil": 16800.000
-  }
-]
+Le Rectorat fournit, après que l'algorithme d'affectation ait tourné, un détail des calculs de l'algorithme permettant à chacun de vérifier qu'il n'y a pas eu d'erreur.
+Par exemple il faut bien vérifier que les notes de l'étape 1 du bilan périodique correspondent bien aux moyennes trimestrielles des bulletins.
+La fiche rappelle en en-tête gauche le nom du collège de scolarisation (suivi de son id/code par exemple 0752523K et PU si public, PR si privé).
+Elle rappelle en en-tête droite si le collégien est boursier ou non : "Elève boursier : OUI / NON
+Cette fiche est constituée de 4 tableaux :
+Le premier tableau détaille les points sur 50 de chaque compétence de socle qui constitue donc le bilan de fin de cycle, par exemple :
+Langages des arts et du corps
+- Langues étrangères et, le cas échéant, langues régionales 50
+- Langue française                                          50
+- Langages mathématiques, scientifiques et informatiques     40
+- Formation de la personne et du citoyen                    25
+- Méthodes et outils pour apprendre                         50    
+- Représentations du monde et activité humaine              40
+- Systèmes naturels et systèmes techniques                  50
+Le tableau suivant liste le score de chaque matière du bilan périodique issue de l'étape 1 décrite précédemment, par exemple :
+FRANC   16.00
+MATHS   14.00
+LV1     15.00
+LV2     16.00
+EPS     14.00
+A-PLA   13.00
+EDMUS   16.00
+SVT     14.00
+TECHN   16.00
+PH-CH   13.00
+HI-GE   14.00
+EMC     14.00
+(A-PLA désigne Arts Plastiques, EDMUS désigne Education Musicale, PH-CH désigne Physique-Chimie et HI-GE désigne Histoire-Géo)
+Le tableau suivant s'appelle "Notes harmonisées par champs disciplinaires".
+Il affiche les notes de champs disciplinaires correspondant à la fin de l'étape 3 du calcul de bilan périodique.
+Il affiche, pour chaque champ, la moyenne brute et la moyenne harmonisée, par exemple :
+ARTS                14.50   99.719
+EPS                 14.00   96.974
+FRANCAIS            16.00   111.288
+HISTOIRE-GEO        14.00   104.393
+LANGUES VIVANTES    15.50   107.693
+MATHEMATIQUES       14.00   105.369
+SCIENCES-TECHNO-DP  14.33   105.022
+La dernier tableau intitulé "TOTAL DU BAREME et COMPARAISON AU BAREME DES DERNIERS ENTRANTS" liste les voeux dans l'odre de préférence et la décision associée (Affecté(e) ou pas), en rappelant pour chaque voeu :
+son rang (colonne "Rang du voeu")
+son bonus géographique (colonne "secteur")
+son bonus boursier (colonne "Boursier")
+son bonus IPS (colonne I.P.S.)
+son score de bilan de fin de cycle (colonne "Socle")
+son score de bilan périodique (colonne "Disciplines")
+son score global sur ce voeu (colonne "barème")
+le lycée demandé (colonne "Etablissement demandé")
+la formation demandée (colonne "Formation")
+la décision sur ce voeu (colonne "Décision")
+barème dernier entrant (colonne "Barème dernier entrant (non) boursier")
+Par exemple :
+1 32640 0 600 4800.00 3138.489 41178.489 SOPHIE GERMAIN 2NDE GENERALE ET TECHNOLOGIQUE Affecté(e) 40730.823
+2 ...
+Cette fiche n'indique pas le collège de secteur (au cas où il serait différent du collège de scolarisation indiqué en en-tête).
+Remarque que si l'on regarde dans le dernier tableau les voeux dont le bonus géographique (colonne "secteur") est valorisé à 32640
+(et qui ne sont pas PIERRE GILLES DE GENNES) on peut retrouver les 5 lycées de secteur 1.
+S'ils ne correspondent pas aux lycées de secteur 1 du collège de scolarisation, alors le collégien est vraisemblablement sectorisé sur un autre collège.
+Comme tu connais toutes les associations collège/lycées de secteur 1 tu dois être capable de retrouver tout seul le collège de secteur à partir des 5 lycées de secteur 1 de la fiche barème.
