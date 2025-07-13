@@ -1411,7 +1411,7 @@ On regroupe maintenant certaines matières, afin de ne se retrouver qu’avec 7 
 ARTS = moyenne(Arts Plastiques, Education Musicale)
 EPS = EPS
 FRANCAIS = Français
-HSITOIRE-GEO = moyenne(Histoire-Géo, EMC)
+HISTOIRE-GEO = moyenne(Histoire-Géo, EMC)
 LANGUES VIVANTES = moyenne(LV1, LV2)
 MATHEMATIQUES = Mathématiques
 SCIENCES-TECHNO-DP = moyenne(Physique-Chimie, SVT, Technologie)
@@ -2280,6 +2280,7 @@ le lycée demandé (colonne "Etablissement demandé")
 la formation demandée (colonne "Formation")
 la décision sur ce voeu (colonne "Décision")
 barème dernier entrant (colonne "Barème dernier entrant (non) boursier")
+
 Par exemple :
 1 32640 0 600 4800.00 3138.489 41178.489 SOPHIE GERMAIN 2NDE GENERALE ET TECHNOLOGIQUE Affecté(e) 40730.823
 2 ...
